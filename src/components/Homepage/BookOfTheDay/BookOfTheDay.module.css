@@ -1,0 +1,63 @@
+.BookOfTheDay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.Caption {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: #24282E;
+    border-bottom: 2px solid #24282E;
+}
+
+.Title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #45484d;
+    margin-bottom: 30px;
+}
+
+.Image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.Image img {
+    height: 260px;
+    width: 180px;
+    border-radius: 25px;
+}
+
+.Score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.Rating {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+    color: #24282E;
+}
+
+.NumberOfRatings {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+    color: #45484d;
+}

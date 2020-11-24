@@ -38,6 +38,7 @@ const profileNavigationItems = (props) => {
 
   let profileNavigatiomItems = navigationData.map((navigation) => (
     <div
+        key={navigation.name}
       className={
         props.pathname === navigation.link ? activeClasses : inactiveClasses
       }

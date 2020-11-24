@@ -1,0 +1,56 @@
+.AuthorItem {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    margin: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Image {
+    height: 60px;
+    width: 60px;
+}
+
+.Image img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.Ranking{
+    height: 45px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 1px solid #E0E0E1;
+    margin-left: 15px;
+
+    display: flex;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #24282E;
+}
+
+.Name{
+    height: 45px;
+    background: #E0E0E1;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-right: 15px;
+
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #24282E;
+}

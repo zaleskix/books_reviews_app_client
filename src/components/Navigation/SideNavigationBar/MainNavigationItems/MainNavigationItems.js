@@ -56,9 +56,10 @@ const mainNavigationItems = (props) => {
 
   let mainNavigation = navigationData.map((navigationItem) =>
     navigationItem.name === "Splitter" ? (
-      <div className={styles.Splitter} />
+      <div key={navigationItem.name} className={styles.Splitter} />
     ) : (
       <div
+        key={navigationItem.name}
         className={
           props.pathname === navigationItem.link
             ? activeClasses
