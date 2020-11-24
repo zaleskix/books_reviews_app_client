@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
-import ProfileExpandMenu from "../ProfileNavigationItem/ProfileExpandMenu/ProfileExpandMenu";
+import ProfileExpandMenu from "../BottomNavigationBar/ProfileNavigationItem/ProfileExpandMenu/ProfileExpandMenu";
 
 import styles from "./NavigationItem.module.css";
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 import NavigationItem from "../NavigationItem/NavigationItem";
-import ProfileNavigationItem from "../ProfileNavigationItem/ProfileNavigationItem";
+import ProfileNavigationItem from "./ProfileNavigationItem/ProfileNavigationItem";
 import styles from "./BottomNavigationBar.module.css";
 
 import Categories from "../../../assets/icons/categories_second.svg";
