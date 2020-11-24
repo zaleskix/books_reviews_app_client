@@ -11,7 +11,9 @@ const layout = (props) => {
                 <SideNavigationBar/>
                 <BottomNavigationBar/>
             </div>
-            {props.children}
+            <div className={styles.Content}>
+                {props.children}
+            </div>
         </div>
     );
 };
