@@ -2,9 +2,9 @@ import React from "react";
 
 import styles from "./Homepage.module.css";
 
-import BookOfTheDay from "../../components/Homepage/BookOfTheDay/BookOfTheDay";
-import TopAuthors from "../../components/Homepage/TopAuthors/TopAuthors";
-import DiscoverCategories from "../../components/Homepage/DiscoverCategories/DiscoverCategories";
+import BookOfTheDay from "./BookOfTheDay/BookOfTheDay";
+import TopAuthors from "./TopAuthors/TopAuthors";
+import DiscoverCategories from "./DiscoverCategories/DiscoverCategories";
 
 import SKing from "../../assets/photos/authors/author1.png";
 import JKRowling from "../../assets/photos/authors/author2.png";
@@ -14,6 +14,7 @@ import ASapkowski from "../../assets/photos/authors/author5.png";
 import Fantastyka from "../../assets/photos/categories/category1.png";
 import ScienceFiction from "../../assets/photos/categories/category2.png";
 import LiteraturaPiekna from "../../assets/photos/categories/category3.png";
+import DoktorSen from "../../assets/photos/books/book1.png";
 
 const homepage = (props) => {
   const authors = [
@@ -30,15 +31,24 @@ const homepage = (props) => {
     { name: "Literatura Piękna", image: LiteraturaPiekna },
   ];
 
+  const bookOfTheDay = {
+    name: "Doktor Sen",
+    image: DoktorSen,
+    rating: "7.5",
+    numberOfRatings: "12 820",
+    description:
+      "Kontynuacja bestsellerowego „Lśnienia”! Pamiętacie małego chłopca obdarzonego niezwykłą mocą? Chłopca nękanego przez duchy? Chłopca uwięzionego w odludnym hotelu wraz z opętanym ojcem? Możecie już poznać jego dalsze losy!",
+  };
+
   return (
     <div className={styles.Homepage}>
       <div className={styles.HomepageTop}>
         <div className={styles.BookOfTheDay}>
           <div className={styles.Caption}>Książka dnia</div>
           <div className={styles.Splitter} />
-          <BookOfTheDay />
+          <BookOfTheDay book={bookOfTheDay} />
         </div>
-          <div className={styles.VerticalSplitter}/>
+        <div className={styles.VerticalSplitter} />
         <div className={styles.TopAuthors}>
           <div className={styles.Caption}>Top autorzy</div>
           <div className={styles.Splitter} />

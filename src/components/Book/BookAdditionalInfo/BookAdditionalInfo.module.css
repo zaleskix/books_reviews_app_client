@@ -1,0 +1,42 @@
+.BookAdditionalInfo {
+  display: none;
+}
+
+.BookDescription {
+  display: none;
+}
+
+@media (min-width: 768px), (min-width: 1600px) {
+  .BookAdditionalInfo {
+    display: flex;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 60px 0 0;
+  }
+
+  .BookDescription {
+    display: flex;
+  }
+
+  .Buttons {
+    width: 360px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1600px) {
+  .BookAdditionalInfo {
+    display: none;
+  }
+
+  .BookDescription {
+    display: none;
+  }
+}

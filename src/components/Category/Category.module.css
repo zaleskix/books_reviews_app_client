@@ -41,9 +41,8 @@
   color: #f4f4f4;
 }
 
-
 @media (min-width: 768px) {
   .Category {
-    margin: 30px 15px
+    margin: 30px 15px;
   }
 }

@@ -1,0 +1,36 @@
+.BookOfTheDay {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.BookContent {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Title {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: #45484d;
+}
+
+@media (min-width: 768px), (min-width: 1600px) {
+  .BookContent {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1600px) {
+  .BookContent {
+    flex-direction: column;
+  }
+}

@@ -14,11 +14,7 @@ const profileExpandMenu = (props) => {
     />
   ));
 
-  return (
-      <React.Fragment>
-        {profileExpandMenuIcons }
-      </React.Fragment>
-  ) ;
+  return <React.Fragment>{profileExpandMenuIcons}</React.Fragment>;
 };
 
 export default profileExpandMenu;

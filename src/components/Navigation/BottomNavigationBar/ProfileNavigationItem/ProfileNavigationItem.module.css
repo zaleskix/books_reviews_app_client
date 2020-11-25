@@ -9,15 +9,13 @@
 }
 
 .ProfileItem:hover .ProfileExpandMenu,
-.NavItemImage:hover .ProfileExpandMenu
-{
+.NavItemImage:hover .ProfileExpandMenu {
   height: 300px;
   margin-bottom: 150px;
 }
 
 .ProfileItem:hover .ProfileExpandMenuIcons,
-.NavItemImage:hover .ProfileExpandMenuIcons
-{
+.NavItemImage:hover .ProfileExpandMenuIcons {
   visibility: visible;
   opacity: 1;
 }
@@ -77,6 +75,5 @@
     display: flex;
     width: 60px;
     height: 60px;
-
   }
 }

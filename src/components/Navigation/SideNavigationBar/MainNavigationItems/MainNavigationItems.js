@@ -24,7 +24,7 @@ const mainNavigationItems = (props) => {
       link: "/",
     },
     {
-      imgAlt: "Categories",
+      imgAlt: "Category",
       imgActive: CategoriesActive,
       imgInactive: CategoriesInactive,
       name: "Kategorie",
@@ -39,14 +39,14 @@ const mainNavigationItems = (props) => {
     },
     { name: "Splitter" },
     {
-      imgAlt: "Books",
+      imgAlt: "Book",
       imgActive: BooksActive,
       imgInactive: BooksInactive,
       name: "Książki",
       link: "/books",
     },
     {
-      imgAlt: "Authors",
+      imgAlt: "Author",
       imgActive: AuthorsActive,
       imgInactive: AuthorsInactive,
       name: "Autorzy",
