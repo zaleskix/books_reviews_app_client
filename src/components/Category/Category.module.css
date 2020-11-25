@@ -1,0 +1,48 @@
+.Category {
+  width: 80%;
+  height: 180px;
+  max-width: 500px;
+  margin-top: 30px;
+  border-radius: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Category img {
+  width: 100%;
+  height: 100%;
+}
+
+.ImageFade {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(36, 40, 46, 0.7);
+}
+
+.CategoryName {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: #f4f4f4;
+}
+
+@media (min-width: 768px) {
+  .Category {
+    margin: 30px 15px;
+  }
+}

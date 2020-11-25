@@ -38,6 +38,7 @@ const profileNavigationItems = (props) => {
 
   let profileNavigatiomItems = navigationData.map((navigation) => (
     <div
+      key={navigation.name}
       className={
         props.pathname === navigation.link ? activeClasses : inactiveClasses
       }
@@ -56,7 +57,7 @@ const profileNavigationItems = (props) => {
     </div>
   ));
   return (
-      <div className={styles.ProfileMenu}>
+    <div className={styles.ProfileMenu}>
       <div className={styles.ProfilePicture}>
         <ProfileNavigationItem
           imgAlt={"Profile"}
@@ -67,7 +68,7 @@ const profileNavigationItems = (props) => {
         />
       </div>
       <div className={styles.ProfileExpandMenu}>{profileNavigatiomItems}</div>
-      </div>
+    </div>
   );
 };
 

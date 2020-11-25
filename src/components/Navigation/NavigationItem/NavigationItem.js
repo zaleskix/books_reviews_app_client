@@ -1,13 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 import ProfileExpandMenu from "../BottomNavigationBar/ProfileNavigationItem/ProfileExpandMenu/ProfileExpandMenu";
 
 import styles from "./NavigationItem.module.css";
 
 const navigationItem = (props) => {
-
   return (
     <NavLink
       to={props.link}

@@ -1,0 +1,13 @@
+.BookCover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.BookCover img {
+  height: 260px;
+  width: 180px;
+  border-radius: 25px;
+}

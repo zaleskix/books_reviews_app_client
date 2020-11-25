@@ -1,7 +1,7 @@
 .NavigationItems {
   display: none;
   position: fixed;
-  background: #24282E;
+  background: #24282e;
   width: 90px;
   height: 100%;
   flex-direction: column;
@@ -21,13 +21,12 @@
   justify-content: center;
   height: 10%;
   color: transparent;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
 
-
-.NavigationItems ul{
+.NavigationItems ul {
   flex-direction: column;
   /*margin-top: 210px;*/
   align-items: flex-end;
@@ -41,7 +40,7 @@
   padding-inline-start: 0;
 }
 
-.NavigationItem{
+.NavigationItem {
   display: flex;
   width: 90%;
   margin: 15px 0;
@@ -50,7 +49,7 @@
   border-radius: 25px 0 0 25px;
   flex-direction: row;
   justify-content: space-between;
-  color: #F4F4F4;
+  color: #f4f4f4;
 }
 
 .ProfileNavigationItem {
@@ -58,12 +57,12 @@
 }
 
 .Active {
-  background: #F4F4F4;
-  color: #24282E;
+  background: #f4f4f4;
+  color: #24282e;
 }
 .NavigationCaption {
   display: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: bold;
 }
@@ -74,14 +73,12 @@
   justify-content: center;
 }
 
-.Splitter{
+.Splitter {
   display: flex;
   width: 100%;
   height: 3px;
   background: #45484d;
 }
-
-
 
 .SideBarNavItems {
   display: flex;
@@ -101,22 +98,22 @@
   justify-content: center;
 }
 
-.ProfileExpandMenu{
+.ProfileExpandMenu {
   display: none;
 }
 
-.ProfilePicture{
+.ProfilePicture {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.SearchIcon{
+.SearchIcon {
   display: flex;
   width: 100%;
 }
 
-.FullSearch{
+.FullSearch {
   display: none;
   width: 100%;
 }
@@ -132,7 +129,7 @@
   }
 
   .NavigationItems:hover .Logo {
-    color: #F4F4F4;
+    color: #f4f4f4;
   }
 
   .NavigationItems:hover .FullSearch {
@@ -169,7 +166,7 @@
   }
 
   .Logo {
-    color: #F4F4F4;
+    color: #f4f4f4;
   }
 
   .FullSearch {
@@ -194,4 +191,3 @@
     padding-right: 45px;
   }
 }
-

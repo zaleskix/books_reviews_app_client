@@ -1,35 +1,34 @@
-.NavigationItems{
-    width: 100%;
-    max-width: unset;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
-    height: 90px;
-    background: #24282E;
-    border-radius: 25px;
+.NavigationItems {
+  width: 100%;
+  max-width: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  height: 90px;
+  background: #24282e;
+  border-radius: 25px;
 }
 
 .NavigationItems ul {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
 }
 
 .SideBarNavItems,
 .Splitter,
-.Search{
-    display: none;
+.Search {
+  display: none;
 }
 
-
 @media (min-width: 768px) {
-    .NavigationItems {
-        display: none;
-    }
+  .NavigationItems {
+    display: none;
+  }
 }
