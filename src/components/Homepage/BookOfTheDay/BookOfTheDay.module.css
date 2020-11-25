@@ -1,9 +1,43 @@
 .BookOfTheDay {
     width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 15px;
+}
+
+.Splitter{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 2px;
+    min-height: 2px;
+    background: #45484d;
+    margin: 15px 0;
+}
+
+.BookContent {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LeftSide {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.RightSide {
+    display: none;
 }
 
 .Caption {
@@ -14,7 +48,6 @@
     font-size: 42px;
     font-weight: 900;
     color: #24282E;
-    border-bottom: 2px solid #24282E;
 }
 
 .Title {
@@ -22,7 +55,6 @@
     font-size: 32px;
     font-weight: 900;
     color: #45484d;
-    margin-bottom: 30px;
 }
 
 .Image {
@@ -60,4 +92,186 @@
     font-style: italic;
     font-size: 16px;
     color: #45484d;
+}
+
+.Description {
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+    .BookContent{
+        flex-direction: row;
+    }
+
+    .LeftSide {
+        width: 40%;
+        margin: 30px  0 0 60px;
+    }
+
+    .RightSide {
+        display: flex;
+        width: 60%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 60px 0 0;
+    }
+
+    .Description {
+        display: flex;
+        max-width: 360px;
+        flex-direction: column;
+        margin-left: 30px;
+        border-radius: 25px;
+        border: 1px solid #24282e;
+    }
+
+    .DescriptionCaption {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 15px 0 0 15px;
+    }
+
+    .DescriptionContent {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        margin: 15px;
+    }
+
+    .Buttons {
+        width: 360px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 60px;
+    }
+
+    .Favourites {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+
+        padding-bottom: 15px;
+        border-bottom: 1px solid #24282e;
+    }
+
+    .Share {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 992px) {
+    .BookContent{
+        flex-direction: column;
+    }
+
+    .LeftSide {
+        width: 100%;
+        margin: 30px  0 0 0;
+    }
+
+    .RightSide {
+        display: none;
+    }
+
+    .Description {
+        display: none;
+    }
+}
+
+@media (min-width: 1600px) {
+    .BookContent {
+        flex-direction: row;
+    }
+
+    .LeftSide {
+        width: 40%;
+        margin: 30px 0 0 60px;
+    }
+
+    .RightSide {
+        display: flex;
+        width: 60%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 60px 0 0;
+    }
+
+    .Description {
+        display: flex;
+        max-width: 360px;
+        flex-direction: column;
+        margin-left: 30px;
+        border-radius: 25px;
+        border: 1px solid #24282e;
+    }
+
+    .DescriptionCaption {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 15px 0 0 15px;
+    }
+
+    .DescriptionContent {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        margin: 15px;
+    }
+
+    .Buttons {
+        width: 360px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 60px;
+    }
+
+    .Favourites {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+
+        padding-bottom: 15px;
+        border-bottom: 1px solid #24282e;
+    }
+
+    .Share {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+    }
 }

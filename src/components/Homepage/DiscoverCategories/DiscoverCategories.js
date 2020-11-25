@@ -13,7 +13,6 @@ const discoverCategories = props => {
 
     return (
         <div className={styles.DiscoverCategories}>
-            <div className={styles.Caption}>{`Odkryj \n kategorie`}</div>
             {categories}
         </div>
     )

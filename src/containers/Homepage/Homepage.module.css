@@ -1,4 +1,8 @@
-.Homepage {
+.Homepage,
+.BookOfTheDay,
+.TopAuthors,
+.DiscoverCategories,
+.HomepageTop {
   height: 100%;
   width: 100%;
   display: flex;
@@ -10,8 +14,85 @@
 .Splitter{
   display: flex;
   width: 90%;
+  max-width: 1200px;
   height: 2px;
   min-height: 2px;
   background: #45484d;
-  margin: 15px 0;
+  margin: 15px 30px;
+}
+
+
+.Caption {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #24282e;
+  margin-top: 60px;
+}
+
+.VerticalSplitter {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .HomepageTop {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+  }
+
+  .BookOfTheDay {
+    width: 50%;
+    height: 700px;
+    padding-right: 30px;
+
+  }
+
+  .TopAuthors {
+    width: 45%;
+    height: 700px;
+    /*margin-right: 60px;*/
+    padding-left: 30px;
+    justify-content: flex-start;
+  }
+
+  .VerticalSplitter {
+    display: flex;
+    width: 1px;
+    min-width: 1px;
+    margin-top: 180px;
+    background: #24282e;
+    height: 450px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .HomepageTop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .BookOfTheDay {
+    width: 50%;
+    height: 700px;
+  }
+
+  .TopAuthors {
+    width: 45%;
+    height: 700px;
+    justify-content: flex-start;
+  }
+
+  .Splitter {
+    width: 100%;
+  }
+
+  .VerticalSplitter {
+    display: flex;
+    width: 1px;
+    min-width: 1px;
+    margin-top: 180px;
+    background: #24282e;
+    height: 450px;
+  }
 }

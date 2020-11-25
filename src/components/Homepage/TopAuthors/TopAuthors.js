@@ -16,9 +16,7 @@ const topAuthors = props => {
 
     return (
         <div className={styles.TopAuthors}>
-            <div className={styles.Caption} >
-                Top autorzy
-            </div>
+
             {authorsRanking}
         </div>
     )
