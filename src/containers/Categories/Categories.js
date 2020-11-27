@@ -28,7 +28,9 @@ const categories = (props) => {
       <div className={styles.PageHeader}>
         <div className={styles.Caption}>Kategorie</div>
       </div>
-      {categories}
+      <div className={styles.PageContent} >
+        {categories}
+      </div>
     </div>
   );
 };

@@ -52,7 +52,7 @@
   .Category {
     max-width: 1100px;
     height: 180px;
-    margin: 15px 15px;
+    margin: 15px 0;
     border-radius: 5px;
   }
 
