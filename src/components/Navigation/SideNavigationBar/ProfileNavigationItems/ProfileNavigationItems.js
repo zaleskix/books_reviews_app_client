@@ -58,7 +58,13 @@ const profileNavigationItems = (props) => {
   ));
   return (
     <div className={styles.ProfileMenu}>
-      <div className={props.isMenuExpanded ? styles.ProfilePictureExpanded : styles.ProfilePictureHided}>
+      <div
+        className={
+          props.isMenuExpanded
+            ? styles.ProfilePictureExpanded
+            : styles.ProfilePictureHided
+        }
+      >
         <ProfileNavigationItem
           imgAlt={"Profile"}
           imgSrc={Profile}
@@ -67,7 +73,9 @@ const profileNavigationItems = (props) => {
           exact
         />
       </div>
-      { props.isMenuExpanded ? <div className={styles.ProfileExpandMenu}>{profileNavigationItems}</div> : null }
+      {props.isMenuExpanded ? (
+        <div className={styles.ProfileExpandMenu}>{profileNavigationItems}</div>
+      ) : null}
     </div>
   );
 };
