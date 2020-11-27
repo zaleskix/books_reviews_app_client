@@ -1,0 +1,11 @@
+
+.Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    color: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}

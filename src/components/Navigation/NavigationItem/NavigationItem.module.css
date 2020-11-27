@@ -6,6 +6,9 @@
   justify-content: center;
   border-radius: 100%;
   transition: 1s ease;
+  text-decoration: none;
+  margin: 15px;
+
 }
 
 .NavigationItem:focus {
@@ -31,13 +34,55 @@
   width: 20px;
 }
 
-.Name {
-  display: none;
-}
+
 
 @media (min-width: 768px) {
   .NavigationItem {
-    width: 100%;
-    max-width: 90px;
+    /*max-width: 90px;*/
+    display: flex;
+    width: 90%;
+    margin: 15px 0;
+    height: 60px;
+    align-items: center;
+    border-radius: 25px 0 0 25px;
+    flex-direction: row;
+    color: #f4f4f4;
   }
+
+  .NavigationItem:focus {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    transition: 1s ease;
+  }
+
+  .Expanded {
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .Hided {
+    justify-content: center;
+  }
+
+  .Active {
+    background: #f4f4f4;
+    color: #24282e;
+  }
+
+  .NavigationItemExpanded {
+    width: 260px;
+    padding: 0 30px;
+  }
+
+  .Name{
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+  }
+
 }

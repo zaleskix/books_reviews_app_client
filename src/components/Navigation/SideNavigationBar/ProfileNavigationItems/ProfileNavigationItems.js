@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../SideNavigationBar.module.css";
+import styles from "./ProfileNavigatiomItems.module.css";
 
 import ProfileNavigationItem from "../../BottomNavigationBar/ProfileNavigationItem/ProfileNavigationItem";
 import Profile from "../../../../assets/photos/users/user1.jpg";
@@ -36,7 +36,7 @@ const profileNavigationItems = (props) => {
     },
   ];
 
-  let profileNavigatiomItems = navigationData.map((navigation) => (
+  let profileNavigationItems = navigationData.map((navigation) => (
     <div
       key={navigation.name}
       className={
@@ -58,7 +58,7 @@ const profileNavigationItems = (props) => {
   ));
   return (
     <div className={styles.ProfileMenu}>
-      <div className={styles.ProfilePicture}>
+      <div className={props.isMenuExpanded ? styles.ProfilePictureExpanded : styles.ProfilePictureHided}>
         <ProfileNavigationItem
           imgAlt={"Profile"}
           imgSrc={Profile}
@@ -67,7 +67,7 @@ const profileNavigationItems = (props) => {
           exact
         />
       </div>
-      <div className={styles.ProfileExpandMenu}>{profileNavigatiomItems}</div>
+      { props.isMenuExpanded ? <div className={styles.ProfileExpandMenu}>{profileNavigationItems}</div> : null }
     </div>
   );
 };

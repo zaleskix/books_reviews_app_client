@@ -10,148 +10,20 @@
   -o-transition: width 0.75s ease-in-out;
   transition: width 0.75s ease-in-out;
 }
-.Search {
-  width: 100%;
-  height: 10%;
+
+.Hided {
+  width: 90px;
 }
 
-.Logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10%;
-  color: transparent;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.NavigationItems ul {
-  flex-direction: column;
-  /*margin-top: 210px;*/
-  align-items: flex-end;
-  justify-content: center;
-  width: 100%;
-  height: 65%;
-  margin-top: auto;
-  display: flex;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-}
-
-.NavigationItem {
-  display: flex;
-  width: 90%;
-  margin: 15px 0;
-  height: 60px;
-  align-items: center;
-  border-radius: 25px 0 0 25px;
-  flex-direction: row;
-  justify-content: space-between;
-  color: #f4f4f4;
-}
-
-.ProfileNavigationItem {
-  padding-right: 15px;
-}
-
-.Active {
-  background: #f4f4f4;
-  color: #24282e;
-}
-.NavigationCaption {
-  display: none;
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.NavigationItems:hover {
+.Expanded {
   width: 275px;
   align-items: center;
   justify-content: center;
 }
 
-.Splitter {
-  display: flex;
-  width: 100%;
-  height: 3px;
-  background: #45484d;
-}
-
-.SideBarNavItems {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-}
-
-.ProfileMenu {
-  background: #45484d;
-  width: 100%;
-  height: 15%;
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ProfileExpandMenu {
-  display: none;
-}
-
-.ProfilePicture {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.SearchIcon {
-  display: flex;
-  width: 100%;
-}
-
-.FullSearch {
-  display: none;
-  width: 100%;
-}
-
-/*Hide side bar menu to 90px*/
 @media (min-width: 768px) {
   .NavigationItems {
     display: flex;
-  }
-
-  .NavigationItems:hover .NavigationCaption {
-    display: flex;
-  }
-
-  .NavigationItems:hover .Logo {
-    color: #f4f4f4;
-  }
-
-  .NavigationItems:hover .FullSearch {
-    display: flex;
-  }
-
-  .NavigationItems:hover .SearchIcon {
-    display: none;
-  }
-
-  .NavigationItems:hover .ProfilePicture {
-    width: 30%;
-  }
-
-  .NavigationItems:hover .ProfileExpandMenu {
-    display: flex;
-    width: 50%;
-  }
-
-  .NavigationItems:hover .NavigationItem {
-    width: 260px;
-    padding-right: 45px;
   }
 }
 
@@ -159,35 +31,5 @@
 @media (min-width: 992px) {
   .NavigationItems {
     width: 275px;
-  }
-
-  .NavigationCaption {
-    display: flex;
-  }
-
-  .Logo {
-    color: #f4f4f4;
-  }
-
-  .FullSearch {
-    display: flex;
-  }
-
-  .SearchIcon {
-    display: none;
-  }
-
-  .ProfilePicture {
-    width: 30%;
-  }
-
-  .ProfileExpandMenu {
-    display: flex;
-    width: 50%;
-  }
-
-  .NavigationItem {
-    width: 260px;
-    padding-right: 45px;
   }
 }

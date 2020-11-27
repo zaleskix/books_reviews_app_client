@@ -11,9 +11,9 @@ import JKRowling from "../../assets/photos/authors/author2.png";
 import JRRTolkien from "../../assets/photos/authors/author3.png";
 import RMroz from "../../assets/photos/authors/author4.png";
 import ASapkowski from "../../assets/photos/authors/author5.png";
-import Fantastyka from "../../assets/photos/categories/category1.png";
-import ScienceFiction from "../../assets/photos/categories/category2.png";
-import LiteraturaPiekna from "../../assets/photos/categories/category3.png";
+import Fantastyka from "../../assets/photos/categories/fantasy.png";
+import ScienceFiction from "../../assets/photos/categories/sci_fi.png";
+import LiteraturaPiekna from "../../assets/photos/categories/lit_piekna.png";
 import DoktorSen from "../../assets/photos/books/book1.png";
 
 const homepage = (props) => {

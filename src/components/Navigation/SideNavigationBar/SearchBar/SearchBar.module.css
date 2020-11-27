@@ -7,7 +7,14 @@
   height: 45px;
   /*background: #45484d;*/
   border-bottom: 1px solid #f4f4f4;
-  margin: 90px auto;
+}
+
+.Expanded {
+  margin: 90px auto auto auto;
+}
+
+.Hidden {
+  margin: 240px auto auto auto;
 }
 
 .SearchIconOnly {

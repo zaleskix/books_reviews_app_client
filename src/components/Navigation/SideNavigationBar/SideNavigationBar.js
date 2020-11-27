@@ -6,32 +6,97 @@ import ProfileNavigationItems from "./ProfileNavigationItems/ProfileNavigationIt
 import MainNavigationItems from "./MainNavigationItems/MainNavigationItems";
 import Logo from "../../UI/Logo/Logo";
 import styles from "./SideNavigationBar.module.css";
+import HomepageActive from "../../../assets/icons/home_primary.svg";
+import HomepageInactive from "../../../assets/icons/home_second.svg";
+import CategoriesActive from "../../../assets/icons/categories_primary.svg";
+import CategoriesInactive from "../../../assets/icons/categories_second.svg";
+import FavouritesActive from "../../../assets/icons/favourites_primary.svg";
+import FavouritesInactive from "../../../assets/icons/favourites_second.svg";
+import BooksActive from "../../../assets/icons/books_primary.svg";
+import BooksInactive from "../../../assets/icons/books_second.svg";
+import AuthorsActive from "../../../assets/icons/authors_primary.svg";
+import AuthorsInactive from "../../../assets/icons/authors_second.svg";
 
 const SideNavigationBar = (props) => {
+  const mainNavigationData = [
+    {
+      imgAlt: "Home",
+      imgActive: HomepageActive,
+      imgInactive: HomepageInactive,
+      name: "Strona główna",
+      link: "/",
+    },
+    {
+      imgAlt: "Category",
+      imgActive: CategoriesActive,
+      imgInactive: CategoriesInactive,
+      name: "Kategorie",
+      link: "/categories",
+    },
+    {
+      imgAlt: "Favourites",
+      imgActive: FavouritesActive,
+      imgInactive: FavouritesInactive,
+      name: "Ulubione",
+      link: "/favourites",
+    },
+    { name: "Splitter" },
+    {
+      imgAlt: "Book",
+      imgActive: BooksActive,
+      imgInactive: BooksInactive,
+      name: "Książki",
+      link: "/books",
+    },
+    {
+      imgAlt: "Author",
+      imgActive: AuthorsActive,
+      imgInactive: AuthorsInactive,
+      name: "Autorzy",
+      link: "/authors",
+    },
+  ];
+  const isHighResScreen = window.matchMedia("(min-width: 992px)").matches;
   const location = useLocation();
-  const [pathname, setPathname] = useState();
+  const [pathname, setPathname] = useState("");
+  const [isMenuExpanded, setExpandMenu] = useState(isHighResScreen);
+
+  let classes = [styles.NavigationItems];
+  isMenuExpanded ? classes.push(styles.Expanded) : classes.push(styles.Hided);
 
   useEffect(() => {
     setPathname(location.pathname);
   }, [location]);
 
+  const expandMenu = () => {
+    setExpandMenu(true);
+  };
+
+  const hideMenu = () => {
+    if (!isHighResScreen) setExpandMenu(false);
+  };
+
   return (
-    <div className={styles.NavigationItems}>
-      <div className={styles.Logo}>
-        <Logo />
-      </div>
-
-      <div className={styles.Search}>
-        <div className={styles.FullSearch}>
-          <SearchBar />
+    <div
+      className={classes.join(" ")}
+      onTouchEnd={isMenuExpanded ? hideMenu : expandMenu}
+      onMouseEnter={expandMenu}
+      onMouseLeave={hideMenu}
+    >
+      {isMenuExpanded ? (
+        <div className={styles.Logo}>
+          <Logo />
         </div>
-        <div className={styles.SearchIcon}>
-          <SearchBar iconOnly />
-        </div>
-      </div>
+      ) : null}
 
-      <MainNavigationItems pathname={pathname} />
-      <ProfileNavigationItems pathname={pathname} />
+      <SearchBar iconOnly={!isMenuExpanded} />
+      <MainNavigationItems
+        navigationData={mainNavigationData}
+        pathname={pathname}
+        isMenuExpanded={isMenuExpanded}/>
+      <ProfileNavigationItems
+        pathname={pathname}
+        isMenuExpanded={isMenuExpanded}/>
     </div>
   );
 };

@@ -1,24 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-
-import ProfileExpandMenu from "../BottomNavigationBar/ProfileNavigationItem/ProfileExpandMenu/ProfileExpandMenu";
 
 import styles from "./NavigationItem.module.css";
 
 const navigationItem = (props) => {
+  let classes = [styles.NavigationItem];
+  props.isMenuExpanded ? classes.push(styles.Expanded) : classes.push(styles.Hided);
+
   return (
+
     <NavLink
       to={props.link}
       exact={props.exact}
-      className={styles.NavigationItem}
+      className={classes.join(" ")}
+      activeClassName={styles.Active}
     >
       <div className={styles.NavItemImage}>
         <img alt={props.imgAlt} src={props.imgSrc} />
       </div>
-      <div className={styles.Name}>
-        <p>{props.name}</p>
-      </div>
+      {props.isMenuExpanded ? <div className={styles.Name}>{props.name}</div> : null }
     </NavLink>
   );
 };
