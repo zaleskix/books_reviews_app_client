@@ -93,10 +93,12 @@ const SideNavigationBar = (props) => {
       <MainNavigationItems
         navigationData={mainNavigationData}
         pathname={pathname}
-        isMenuExpanded={isMenuExpanded}/>
+        isMenuExpanded={isMenuExpanded}
+      />
       <ProfileNavigationItems
         pathname={pathname}
-        isMenuExpanded={isMenuExpanded}/>
+        isMenuExpanded={isMenuExpanded}
+      />
     </div>
   );
 };

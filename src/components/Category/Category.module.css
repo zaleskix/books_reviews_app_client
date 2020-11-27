@@ -45,5 +45,13 @@
   .Category {
     margin: 30px 15px;
   }
+}
 
+@media (min-width: 992px) {
+  .Category {
+    max-width: 1100px;
+    height: 180px;
+    margin: 15px 15px;
+    border-radius: 5px;
+  }
 }

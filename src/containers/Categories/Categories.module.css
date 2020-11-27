@@ -1,1 +1,28 @@
-.Categories {}
+.Categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*padding-left: 60px;*/
+  height: 100%;
+  width: 100%;
+}
+
+.PageHeader {
+  width: 100%;
+  align-items: flex-start;
+}
+.Caption {
+  display: flex;
+  width: 90%;
+  height: 150px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #24282e;
+  padding-left: 90px;
+  margin-bottom: 90px;
+  border-bottom: 5px solid #24282e;
+}

@@ -16,7 +16,7 @@
 }
 
 .Expanded {
-  width: 275px;
+  width: 300px;
   align-items: center;
   justify-content: center;
 }
@@ -30,6 +30,6 @@
 /*Expand side bar menu*/
 @media (min-width: 992px) {
   .NavigationItems {
-    width: 275px;
+    width: 300px;
   }
 }
