@@ -127,7 +127,6 @@
     align-items: center;
     justify-content: center;
 
-
     background: #f4f4f4;
     border: 1px solid #e0e0e1;
     border-radius: 5px;
@@ -166,13 +165,12 @@
     width: 60%;
     justify-content: flex-start;
     padding-left: 90px;
-
   }
 }
 
 @media (min-width: 1200px) {
   .Sort,
-  .TableCaption{
+  .TableCaption {
     padding-left: 10%;
     padding-right: 10%;
   }

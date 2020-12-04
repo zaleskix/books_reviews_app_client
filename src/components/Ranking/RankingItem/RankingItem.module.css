@@ -61,7 +61,6 @@
   text-align: center;
 }
 
-
 @media (min-width: 768px) {
   .RankingItem {
     /*width: 25%;*/
@@ -69,12 +68,10 @@
     /*margin-right: 15px;*/
     /*margin-left: 15px;*/
     /*box-shadow: rgba(244, 244, 244) 0px 1px 0px;*/
-
   }
 }
 
 @media (min-width: 1200px) {
-
   .RankingItem {
     width: 280px;
     margin-right: 30px;
@@ -83,5 +80,4 @@
     /*margin-right: 10px;*/
     /*margin-left: 10px;*/
   }
-
 }

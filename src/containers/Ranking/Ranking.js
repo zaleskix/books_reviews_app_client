@@ -55,7 +55,7 @@ const ranking = (props) => {
       <PageHeader name={"Rankingi"} />
       <div className={styles.Ranking}>
         <Ranking
-            tableCaption={tableCaption}
+          tableCaption={tableCaption}
           secondClicked={secondClicked}
           activeTableHeader={activeTableHeader}
           secondTableHeader={secondTableHeader}
