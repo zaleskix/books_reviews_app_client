@@ -8,6 +8,7 @@ import Kryminal from "../../assets/photos/categories/crime.png";
 import Horror from "../../assets/photos/categories/horror.png";
 import Romans from "../../assets/photos/categories/romantic.png";
 import Category from "../../components/Category/Category";
+import PageHeader from "../../components/UI/PageHeader/PageHeader";
 
 const categories = (props) => {
   const categoriesData = [
@@ -25,12 +26,8 @@ const categories = (props) => {
 
   return (
     <div className={styles.Categories}>
-      <div className={styles.PageHeader}>
-        <div className={styles.Caption}>Kategorie</div>
-      </div>
-      <div className={styles.PageContent} >
-        {categories}
-      </div>
+      <PageHeader name={"Kategorie"} />
+      <div className={styles.PageContent}>{categories}</div>
     </div>
   );
 };

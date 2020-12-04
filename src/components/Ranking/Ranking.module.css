@@ -1,0 +1,190 @@
+.Ranking {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.TableHeader {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /*padding-right: 20%;*/
+}
+
+.Active {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*border-radius: 15px;*/
+
+  background: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  border-left: 2px solid #e0e0e1;
+  border-top: 2px solid #e0e0e1;
+  border-right: 2px solid #e0e0e1;
+}
+
+.NonActive {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 2px solid #e0e0e1;
+  /*background: #e0e0e1;*/
+}
+
+.TableContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  background: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+  border-bottom: 2px solid #e0e0e1;
+  border-right: 2px solid #e0e0e1;
+  border-left: 2px solid #e0e0e1;
+}
+
+.TableAdditionalElements {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .Ranking {
+    width: 100%;
+  }
+
+  .TableContent {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .TableAdditionalElements {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #24282e;
+
+    background: white;
+    border-left: 2px #e0e0e1 solid;
+    border-right: 2px #e0e0e1 solid;
+    border-top: none;
+  }
+
+  .Sort {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .TableCaption {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+
+  .SortCaption {
+    width: 30%;
+  }
+
+  .SortDropdown {
+    width: 70%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f4f4;
+    border: 1px solid #e0e0e1;
+    border-radius: 5px;
+  }
+
+  .SortDropdownCaption {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-right: 1px solid #e0e0e1;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .SortDropdownIcon {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .SortDropdownIcon img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .Active {
+    width: 40%;
+  }
+
+  .NonActive {
+    width: 60%;
+    justify-content: flex-start;
+    padding-left: 90px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Sort,
+  .TableCaption {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .TableContent {
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  .Active {
+    width: 20%;
+  }
+
+  .NonActive {
+    width: 80%;
+  }
+}

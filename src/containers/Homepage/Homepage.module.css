@@ -1,6 +1,6 @@
 .Homepage,
 .BookOfTheDay,
-.TopAuthors{
+.TopAuthors {
   height: 100%;
   width: 100%;
   display: flex;
@@ -56,10 +56,14 @@
   display: none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .HomepageTop {
     flex-direction: row;
     justify-content: space-between;
+    max-width: 1200px;
+  }
+
+  .DiscoverCategories {
     max-width: 1200px;
   }
 

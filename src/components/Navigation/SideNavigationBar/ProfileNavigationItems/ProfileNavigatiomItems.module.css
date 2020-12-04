@@ -34,7 +34,7 @@
 /*  width: 50%;*/
 /*}*/
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .ProfilePictureExpanded {
     width: 30%;
   }

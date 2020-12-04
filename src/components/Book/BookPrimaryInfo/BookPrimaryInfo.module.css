@@ -15,7 +15,7 @@
   }
 }
 
-@media (min-width: 992px) and (max-width: 1600px) {
+@media (min-width: 1200px) and (max-width: 1600px) {
   .BookPrimaryInfo {
     width: 100%;
     margin: 30px 0 0 0;
