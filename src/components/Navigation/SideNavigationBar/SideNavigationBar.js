@@ -38,7 +38,7 @@ const SideNavigationBar = (props) => {
       imgActive: FavouritesActive,
       imgInactive: FavouritesInactive,
       name: "Ulubione",
-      link: "/favourites",
+      link: "/favourite",
     },
     { name: "Splitter" },
     {

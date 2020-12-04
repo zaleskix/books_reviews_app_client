@@ -45,19 +45,16 @@ const homepage = (props) => {
       <div className={styles.HomepageTop}>
         <div className={styles.BookOfTheDay}>
           <div className={styles.Caption}>Książka dnia</div>
-          {/*<div className={styles.Splitter} />*/}
           <BookOfTheDay book={bookOfTheDay} />
         </div>
         <div className={styles.VerticalSplitter} />
         <div className={styles.TopAuthors}>
           <div className={styles.Caption}>Top autorzy</div>
-          {/*<div className={styles.Splitter} />*/}
           <TopAuthors authors={authors} />
         </div>
       </div>
       <div className={styles.DiscoverCategories}>
         <div className={styles.Caption}>{`Odkryj \n kategorie`}</div>
-        {/*<div className={styles.Splitter} />*/}
         <DiscoverCategories categories={categories} />
       </div>
     </div>

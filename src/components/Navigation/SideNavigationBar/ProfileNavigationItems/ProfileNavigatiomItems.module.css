@@ -1,11 +1,14 @@
 .ProfileMenu {
   background: #45484d;
   width: 100%;
-  height: 15%;
+  height: 25%;
   margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 
 .ProfileNavigationItem {

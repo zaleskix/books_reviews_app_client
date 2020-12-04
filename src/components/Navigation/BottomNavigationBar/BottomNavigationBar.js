@@ -28,7 +28,7 @@ const bottomNavigationBar = (props) => {
       imgAlt: "Favourites",
       imgSrc: Favourites,
       name: "Favourites",
-      link: "/favourites",
+      link: "/favourite",
     },
     { imgAlt: "Logout", imgSrc: Logout, name: "Logout", link: "/logout" },
   ];

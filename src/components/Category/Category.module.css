@@ -1,5 +1,5 @@
 .Category {
-  width: 100%;
+  width: 90%;
   height: 180px;
   max-width: 500px;
   margin-top: 30px;
@@ -48,12 +48,18 @@
   }
 }
 
+@media (min-width: 992px) {
+  .Category {
+    width: 45%;
+  }
+}
+
 @media (min-width: 1200px) {
   .Category {
     max-width: 400px;
     /*min-width: 500px;*/
     height: 180px;
-    margin: 15px;
+    /*margin: 15px;*/
     border-radius: 15px;
   }
 
