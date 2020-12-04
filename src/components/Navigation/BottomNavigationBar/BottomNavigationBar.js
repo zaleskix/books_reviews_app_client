@@ -62,14 +62,14 @@ const bottomNavigationBar = (props) => {
           imgAlt={"Books"}
           imgSrc={Books}
           name={"Books"}
-          link="/books"
+          link="/ranking/books"
           exact
         />
         <NavigationItem
           imgAlt={"Authors"}
           imgSrc={Authors}
           name={"Authors"}
-          link="/authors"
+          link="/ranking/authors"
           exact
         />
       </ul>

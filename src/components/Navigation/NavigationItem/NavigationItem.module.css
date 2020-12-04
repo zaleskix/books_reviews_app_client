@@ -7,7 +7,8 @@
   border-radius: 100%;
   transition: 1s ease;
   text-decoration: none;
-  margin: 15px;
+  padding: 15px;
+  margin-top: 10px;
 }
 
 .NavigationItem:focus {
@@ -38,7 +39,8 @@
     /*max-width: 90px;*/
     display: flex;
     width: 90%;
-    margin: 15px 0;
+    padding: 15px 0;
+    margin-top: 10px;
     height: 60px;
     align-items: center;
     border-radius: 25px 0 0 25px;

@@ -48,7 +48,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .Category {
     max-width: 1100px;
     height: 180px;
