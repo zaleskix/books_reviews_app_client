@@ -27,6 +27,8 @@ const ranking = (props) => {
     { ranking: 4, name: "Instytut", image: Instytut },
     { ranking: 5, name: "Precedens", image: Precedens },
     { ranking: 6, name: "Czerwona Królowa", image: CzerwonaKrolowa },
+    { ranking: 7, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
+    { ranking: 8, name: "Instytut", image: Instytut },
   ];
 
   const authors = [
@@ -36,6 +38,8 @@ const ranking = (props) => {
     { ranking: 4, name: "Remigiusz Mróz", image: RMroz },
     { ranking: 5, name: "Andrzej Sapkowski", image: ASpakowski },
     { ranking: 6, name: "Olga Tokarczuk", image: OTokarczuk },
+    { ranking: 7, name: "J.R.R. Tolkien", image: JRRTolkien },
+    { ranking: 8, name: "Stephen King", image: StephenKing },
   ];
 
   let activeTableHeader = props.isBookRanking ? "Książki" : "Autorzy";

@@ -8,9 +8,8 @@ const Homepage = React.lazy(() => import("./containers/Homepage/Homepage"));
 const Categories = React.lazy(() =>
   import("./containers/Categories/Categories")
 );
-const Favourites = React.lazy(() =>
-  import("./containers/Favourites/Favourites")
-);
+const Favourites = React.lazy(() =>import("./containers/Favourites/Favourites"));
+const Profile = React.lazy(() =>import("./containers/Profile/Profile"));
 
 function App() {
   let routes = (
@@ -27,6 +26,7 @@ function App() {
       />
       <Route path="/categories" exact component={Categories} />
       <Route path="/favourite" exact component={Favourites} />
+      <Route path="/profile/:id" exact component={(props) => <Profile {...props} /> } />
       <Route path="/" exact component={Homepage} />
       <Redirect to="/" />
     </Switch>
