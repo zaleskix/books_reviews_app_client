@@ -17,48 +17,48 @@ import LiteraturaPiekna from "../../assets/photos/categories/lit_piekna.png";
 import DoktorSen from "../../assets/photos/books/book1.png";
 
 const homepage = (props) => {
-  const authors = [
-    { name: "Stephen King", ranking: 1, image: SKing },
-    { name: "J.K. Rowling", ranking: 2, image: JKRowling },
-    { name: "J. R. R. Tolkien", ranking: 3, image: JRRTolkien },
-    { name: "Remigiusz Mróz", ranking: 4, image: RMroz },
-    { name: "Andrzej Sapkowski", ranking: 5, image: ASapkowski },
-  ];
+    const authors = [
+        {name: "Stephen King", ranking: 1, image: SKing},
+        {name: "J.K. Rowling", ranking: 2, image: JKRowling},
+        {name: "J. R. R. Tolkien", ranking: 3, image: JRRTolkien},
+        {name: "Remigiusz Mróz", ranking: 4, image: RMroz},
+        {name: "Andrzej Sapkowski", ranking: 5, image: ASapkowski},
+    ];
 
-  const categories = [
-    { name: "Fantastyka", image: Fantastyka },
-    { name: "Science Fiction", image: ScienceFiction },
-    { name: "Literatura Piękna", image: LiteraturaPiekna },
-  ];
+    const categories = [
+        {name: "Fantastyka", image: Fantastyka},
+        {name: "Science Fiction", image: ScienceFiction},
+        {name: "Literatura Piękna", image: LiteraturaPiekna},
+    ];
 
-  const bookOfTheDay = {
-    name: "Doktor Sen",
-    image: DoktorSen,
-    rating: "7.5",
-    numberOfRatings: "12 820",
-    description:
-      "Kontynuacja bestsellerowego „Lśnienia”! Pamiętacie małego chłopca obdarzonego niezwykłą mocą? Chłopca nękanego przez duchy? Chłopca uwięzionego w odludnym hotelu wraz z opętanym ojcem? Możecie już poznać jego dalsze losy!",
-  };
+    const bookOfTheDay = {
+        name: "Doktor Sen",
+        image: DoktorSen,
+        rating: "7.5",
+        numberOfRatings: "12 820",
+        description:
+            "Kontynuacja bestsellerowego „Lśnienia”! Pamiętacie małego chłopca obdarzonego niezwykłą mocą? Chłopca nękanego przez duchy? Chłopca uwięzionego w odludnym hotelu wraz z opętanym ojcem? Możecie już poznać jego dalsze losy!",
+    };
 
-  return (
-    <div className={styles.Homepage}>
-      <div className={styles.HomepageTop}>
-        <div className={styles.BookOfTheDay}>
-          <div className={styles.Caption}>Książka dnia</div>
-          <BookOfTheDay book={bookOfTheDay} />
+    return (
+        <div className={styles.Homepage}>
+            <div className={styles.HomepageTop}>
+                <div className={styles.BookOfTheDay}>
+                    <div className={styles.Caption}>Książka dnia</div>
+                    <BookOfTheDay book={bookOfTheDay}/>
+                </div>
+                <div className={styles.VerticalSplitter}/>
+                <div className={styles.TopAuthors}>
+                    <div className={styles.Caption}>Top autorzy</div>
+                    <TopAuthors authors={authors}/>
+                </div>
+            </div>
+            <div className={styles.DiscoverCategories}>
+                <div className={styles.Caption}>{`Odkryj \n kategorie`}</div>
+                <DiscoverCategories categories={categories}/>
+            </div>
         </div>
-        <div className={styles.VerticalSplitter} />
-        <div className={styles.TopAuthors}>
-          <div className={styles.Caption}>Top autorzy</div>
-          <TopAuthors authors={authors} />
-        </div>
-      </div>
-      <div className={styles.DiscoverCategories}>
-        <div className={styles.Caption}>{`Odkryj \n kategorie`}</div>
-        <DiscoverCategories categories={categories} />
-      </div>
-    </div>
-  );
+    );
 };
 
 export default homepage;

@@ -1,35 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="292.359" height="292.359" style="enable-background:new 0 0 292.359 292.359;" xml:space="preserve"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="292.359"
+     height="292.359" style="enable-background:new 0 0 292.359 292.359;" xml:space="preserve"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<g class="currentLayer" style=""><title>Layer 1</title><g id="svg_1" class="" fill-opacity="1" fill="#1a192b">
-	<path d="M222.979,147.331 L95.073,19.424 C91.456,15.807 87.178,14 82.226,14 c-4.952,0 -9.233,1.807 -12.85,5.424 c-3.617,3.617 -5.424,7.898 -5.424,12.847 v255.813 c0,4.948 1.807,9.232 5.424,12.847 c3.621,3.617 7.902,5.428 12.85,5.428 c4.949,0 9.23,-1.811 12.847,-5.428 l127.906,-127.907 c3.614,-3.613 5.428,-7.897 5.428,-12.847 C228.407,155.229 226.594,150.948 222.979,147.331 z" id="svg_2" fill="#1a192b"/>
-</g><g id="svg_3">
-</g><g id="svg_4">
-</g><g id="svg_5">
-</g><g id="svg_6">
-</g><g id="svg_7">
-</g><g id="svg_8">
-</g><g id="svg_9">
-</g><g id="svg_10">
-</g><g id="svg_11">
-</g><g id="svg_12">
-</g><g id="svg_13">
-</g><g id="svg_14">
-</g><g id="svg_15">
-</g><g id="svg_16">
-</g><g id="svg_17">
+    <g class="currentLayer" style=""><title>Layer 1</title>
+        <g id="svg_1" class="" fill-opacity="1" fill="#1a192b">
+	<path d="M222.979,147.331 L95.073,19.424 C91.456,15.807 87.178,14 82.226,14 c-4.952,0 -9.233,1.807 -12.85,5.424 c-3.617,3.617 -5.424,7.898 -5.424,12.847 v255.813 c0,4.948 1.807,9.232 5.424,12.847 c3.621,3.617 7.902,5.428 12.85,5.428 c4.949,0 9.23,-1.811 12.847,-5.428 l127.906,-127.907 c3.614,-3.613 5.428,-7.897 5.428,-12.847 C228.407,155.229 226.594,150.948 222.979,147.331 z"
+          id="svg_2" fill="#1a192b"/>
+</g>
+        <g id="svg_3">
+</g>
+        <g id="svg_4">
+</g>
+        <g id="svg_5">
+</g>
+        <g id="svg_6">
+</g>
+        <g id="svg_7">
+</g>
+        <g id="svg_8">
+</g>
+        <g id="svg_9">
+</g>
+        <g id="svg_10">
+</g>
+        <g id="svg_11">
+</g>
+        <g id="svg_12">
+</g>
+        <g id="svg_13">
+</g>
+        <g id="svg_14">
+</g>
+        <g id="svg_15">
+</g>
+        <g id="svg_16">
+</g>
+        <g id="svg_17">
 </g></g></svg>

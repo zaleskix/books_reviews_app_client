@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
 
 import SearchBar from "./SearchBar/SearchBar";
 import ProfileNavigationItems from "./ProfileNavigationItems/ProfileNavigationItems";
@@ -18,89 +18,89 @@ import AuthorsActive from "../../../assets/icons/authors_primary.svg";
 import AuthorsInactive from "../../../assets/icons/authors_second.svg";
 
 const SideNavigationBar = (props) => {
-  const mainNavigationData = [
-    {
-      imgAlt: "Home",
-      imgActive: HomepageActive,
-      imgInactive: HomepageInactive,
-      name: "Strona główna",
-      link: "/",
-    },
-    {
-      imgAlt: "Category",
-      imgActive: CategoriesActive,
-      imgInactive: CategoriesInactive,
-      name: "Kategorie",
-      link: "/categories",
-    },
-    {
-      imgAlt: "Favourites",
-      imgActive: FavouritesActive,
-      imgInactive: FavouritesInactive,
-      name: "Ulubione",
-      link: "/favourite",
-    },
-    { name: "Splitter" },
-    {
-      imgAlt: "Book",
-      imgActive: BooksActive,
-      imgInactive: BooksInactive,
-      name: "Książki",
-      link: "/books/ranking",
-    },
-    {
-      imgAlt: "Author",
-      imgActive: AuthorsActive,
-      imgInactive: AuthorsInactive,
-      name: "Autorzy",
-      link: "/authors/ranking",
-    },
-  ];
-  const isHighResScreen = window.matchMedia("(min-width: 1200px)").matches;
-  const location = useLocation();
-  const [pathname, setPathname] = useState("");
-  const [isMenuExpanded, setExpandMenu] = useState(isHighResScreen);
+    const mainNavigationData = [
+        {
+            imgAlt: "Home",
+            imgActive: HomepageActive,
+            imgInactive: HomepageInactive,
+            name: "Strona główna",
+            link: "/",
+        },
+        {
+            imgAlt: "Category",
+            imgActive: CategoriesActive,
+            imgInactive: CategoriesInactive,
+            name: "Kategorie",
+            link: "/categories",
+        },
+        {
+            imgAlt: "Favourites",
+            imgActive: FavouritesActive,
+            imgInactive: FavouritesInactive,
+            name: "Ulubione",
+            link: "/favourite",
+        },
+        {name: "Splitter"},
+        {
+            imgAlt: "Book",
+            imgActive: BooksActive,
+            imgInactive: BooksInactive,
+            name: "Książki",
+            link: "/books/ranking",
+        },
+        {
+            imgAlt: "Author",
+            imgActive: AuthorsActive,
+            imgInactive: AuthorsInactive,
+            name: "Autorzy",
+            link: "/authors/ranking",
+        },
+    ];
+    const isHighResScreen = window.matchMedia("(min-width: 1200px)").matches;
+    const location = useLocation();
+    const [pathname, setPathname] = useState("");
+    const [isMenuExpanded, setExpandMenu] = useState(isHighResScreen);
 
-  let classes = [styles.NavigationItems];
-  isMenuExpanded ? classes.push(styles.Expanded) : classes.push(styles.Hided);
+    let classes = [styles.NavigationItems];
+    isMenuExpanded ? classes.push(styles.Expanded) : classes.push(styles.Hided);
 
-  useEffect(() => {
-    setPathname(location.pathname);
-  }, [location]);
+    useEffect(() => {
+        setPathname(location.pathname);
+    }, [location]);
 
-  const expandMenu = () => {
-    setExpandMenu(true);
-  };
+    const expandMenu = () => {
+        setExpandMenu(true);
+    };
 
-  const hideMenu = () => {
-    if (!isHighResScreen) setExpandMenu(false);
-  };
+    const hideMenu = () => {
+        if (!isHighResScreen) setExpandMenu(false);
+    };
 
-  return (
-    <div
-      className={classes.join(" ")}
-      onTouchEnd={isMenuExpanded ? hideMenu : expandMenu}
-      onMouseEnter={expandMenu}
-      onMouseLeave={hideMenu}
-    >
-      {isMenuExpanded ? (
-        <div className={styles.Logo}>
-          <Logo />
+    return (
+        <div
+            className={classes.join(" ")}
+            onTouchEnd={isMenuExpanded ? hideMenu : expandMenu}
+            onMouseEnter={expandMenu}
+            onMouseLeave={hideMenu}
+        >
+            {isMenuExpanded ? (
+                <div className={styles.Logo}>
+                    <Logo/>
+                </div>
+            ) : null}
+
+            <SearchBar iconOnly={!isMenuExpanded}/>
+            <MainNavigationItems
+                navigationData={mainNavigationData}
+                pathname={pathname}
+                isMenuExpanded={isMenuExpanded}
+            />
+            <ProfileNavigationItems
+                pathname={pathname}
+                isMenuExpanded={isMenuExpanded}
+            />
         </div>
-      ) : null}
-
-      <SearchBar iconOnly={!isMenuExpanded} />
-      <MainNavigationItems
-        navigationData={mainNavigationData}
-        pathname={pathname}
-        isMenuExpanded={isMenuExpanded}
-      />
-      <ProfileNavigationItems
-        pathname={pathname}
-        isMenuExpanded={isMenuExpanded}
-      />
-    </div>
-  );
+    );
 };
 
 export default SideNavigationBar;

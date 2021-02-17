@@ -1,86 +1,86 @@
 .NavigationItem {
-  display: flex;
-  width: 20%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  transition: 1s ease;
-  text-decoration: none;
-  padding: 15px;
-  margin-top: 10px;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    transition: 1s ease;
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 10px;
 }
 
 .NavigationItem:focus {
-  -webkit-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  transform: scale(1.4);
-  transition: 1s ease;
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+    transition: 1s ease;
 }
 
 .NavItemImage {
-  display: flex;
-  height: 30px;
-  width: 30px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  z-index: 3;
-  overflow: hidden;
+    display: flex;
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 3;
+    overflow: hidden;
 }
 
 .NavigationItem img {
-  height: 20px;
-  width: 20px;
+    height: 20px;
+    width: 20px;
 }
 
 @media (min-width: 768px) {
-  .NavigationItem {
-    /*max-width: 90px;*/
-    display: flex;
-    width: 90%;
-    padding: 15px 0;
-    margin-top: 10px;
-    height: 60px;
-    align-items: center;
-    border-radius: 25px 0 0 25px;
-    flex-direction: row;
-    color: #f4f4f4;
-  }
+    .NavigationItem {
+        /*max-width: 90px;*/
+        display: flex;
+        width: 90%;
+        padding: 15px 0;
+        margin-top: 10px;
+        height: 60px;
+        align-items: center;
+        border-radius: 25px 0 0 25px;
+        flex-direction: row;
+        color: #f4f4f4;
+    }
 
-  .NavigationItem:focus {
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    transition: 1s ease;
-  }
+    .NavigationItem:focus {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        transition: 1s ease;
+    }
 
-  .Expanded {
-    justify-content: space-between;
-    padding-right: 60px;
-    padding-left: 30px;
-  }
+    .Expanded {
+        justify-content: space-between;
+        padding-right: 60px;
+        padding-left: 30px;
+    }
 
-  .Hided {
-    justify-content: center;
-  }
+    .Hided {
+        justify-content: center;
+    }
 
-  .Active {
-    background: #f4f4f4;
-    color: #24282e;
-  }
+    .Active {
+        background: #f4f4f4;
+        color: #24282e;
+    }
 
-  .NavigationItemExpanded {
-    width: 260px;
-    padding: 0 30px;
-  }
+    .NavigationItemExpanded {
+        width: 260px;
+        padding: 0 30px;
+    }
 
-  .Name {
-    display: flex;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    font-style: normal;
-    text-decoration: none;
-  }
+    .Name {
+        display: flex;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: normal;
+        text-decoration: none;
+    }
 }

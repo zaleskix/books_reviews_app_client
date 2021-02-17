@@ -1,26 +1,27 @@
 .MainNavigationItems {
-  height: 100%;
-  width: 100%;
-  margin-top: 60px;
+    height: 100%;
+    width: 100%;
+    margin-top: 60px;
 }
 
 .MainNavigationItems ul {
-  flex-direction: column;
-  /*margin-top: 210px;*/
-  align-items: flex-end;
-  justify-content: center;
-  width: 100%;
-  /*height: 65%;*/
-  margin-top: auto;
-  display: flex;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
+    flex-direction: column;
+    /*margin-top: 210px;*/
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    /*height: 65%;*/
+    margin-top: auto;
+    display: flex;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
 }
+
 .Splitter {
-  display: flex;
-  width: 100%;
-  margin: 15px 0;
-  height: 3px;
-  background: #45484d;
+    display: flex;
+    width: 100%;
+    margin: 15px 0;
+    height: 3px;
+    background: #45484d;
 }

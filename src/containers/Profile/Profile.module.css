@@ -1,224 +1,226 @@
 .Profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  /* padding-top: 60px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* padding-top: 60px; */
 }
 
 .PageContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    width: 100%;
+    height: 100%;
 }
 
 .ProfilePictureSection {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-   padding: unset;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: unset;
 }
 
 .ProfilePicture {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ProfilePicture img {
-  width: 180px;
-  height: 220px;
-  border-radius: 25px;
-  border: 2px solid #24282e;
+    width: 180px;
+    height: 220px;
+    border-radius: 25px;
+    border: 2px solid #24282e;
 }
 
 .Buttons {
-  margin: 30px;
-  flex-direction: column;
+    margin: 30px;
+    flex-direction: column;
 }
 
 .AboutMeSection {
-  height: 100%;
-  margin-top: 30px;
-  width: 80%;
-  background-color: white;
-  border-radius: 15px;
-  border: 1px solid #24282e;
+    height: 100%;
+    margin-top: 30px;
+    width: 80%;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #24282e;
 }
 
 .AboutMeCaption {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  padding-left: 15px;
-  padding-top: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 15px;
 }
 
 .AboutMeContent {
-  width: 100%;
-  padding: 30px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
+    width: 100%;
+    padding: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
 }
 
 .Favourites {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .FavouritesBooks {
-  display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  width: 100%;
-  overflow: auto;
-  padding-left: 15px;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    width: 100%;
+    overflow: auto;
+    padding-left: 15px;
+    justify-content: space-between;
 }
+
 .FavouritesBookCaption {
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  text-align: left;
-  width: 80%;
-  font-weight: 900;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    text-align: left;
+    width: 80%;
+    font-weight: 900;
 }
 
 .FavouriteBook {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  margin: 0 15px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Title {
-  display: flex;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  margin-top: 15px;
-  width: 100%;
-  height: 40px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #45484d;
-  border-top: 1px solid #45484d;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #45484d;
+    border-top: 1px solid #45484d;
 }
 
 .Author {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-  margin-top: 5px;
-  text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 5px;
+    text-align: center;
 }
 
 .FavouriteBook img {
-  width: 80px;
-  height: 120px;
-  border-radius: 15px;
+    width: 80px;
+    height: 120px;
+    border-radius: 15px;
 }
 
 @media (min-width: 768px) {
-  .PageContent {
-    margin-top: 0;
-  }
+    .PageContent {
+        margin-top: 0;
+    }
 
-  .ProfilePictureSection {
-    flex-direction: row;
-    justify-content: space-between;
-     padding-left: 90px;
-     padding-right: 90px;
-     margin-bottom: 30px;
-  }
+    .ProfilePictureSection {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 90px;
+        padding-right: 90px;
+        margin-bottom: 30px;
+    }
 
-  .Buttons {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-  }
+    .Buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .AboutMeSection {
-     margin: 30px 90px;
-  }
+    .AboutMeSection {
+        margin: 30px 90px;
+    }
 
-  .Favourites {
-     width: 80%;
-     margin: 30px 90px;
-  }
-   .FavouritesBookCaption,
-  .FavouriteBook,
-   .FavouritesBooks{
-      padding-left: 0;
-      width: 100%;
-     margin-left: 0;
-  }
+    .Favourites {
+        width: 80%;
+        margin: 30px 90px;
+    }
+
+    .FavouritesBookCaption,
+    .FavouriteBook,
+    .FavouritesBooks {
+        padding-left: 0;
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
 
 @media (min-width: 1200px) {
-   .PageContent {
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-   }
+    .PageContent {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 
-   .ProfilePictureSection {
-      width: 50%;
-      flex-direction: column;
-      padding-right: 0;
-      margin: 0;
-   }
+    .ProfilePictureSection {
+        width: 50%;
+        flex-direction: column;
+        padding-right: 0;
+        margin: 0;
+    }
 
-   .AboutMeSection {
-      width: 50%;
-      height: 100%;
-      min-height: 200px;
-      margin: 0 90px 0 0;
-   }
+    .AboutMeSection {
+        width: 50%;
+        height: 100%;
+        min-height: 200px;
+        margin: 0 90px 0 0;
+    }
 
-   .AboutMeCaption {
-      width: 100%;
-      height: 60px;
-      margin-top: 15px;
-      margin-left: 15px;
-   }
+    .AboutMeCaption {
+        width: 100%;
+        height: 60px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
 
-   .AboutMeContent {
-      min-height: 140px;
-      height: 80%;
-   }
+    .AboutMeContent {
+        min-height: 140px;
+        height: 80%;
+    }
 
-   .ProfilePicture img {
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      border: 2px solid #24282e;
-   }
+    .ProfilePicture img {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        border: 2px solid #24282e;
+    }
 
-   .FavouriteBook {
-      margin-right: 30px;
-   }
+    .FavouriteBook {
+        margin-right: 30px;
+    }
 
-   .FavouriteBook img {
-      width: 120px;
-      height: 180px;
-      border-radius: 15px;
-   }
+    .FavouriteBook img {
+        width: 120px;
+        height: 180px;
+        border-radius: 15px;
+    }
 }

@@ -5,15 +5,15 @@ import BookPrimaryInfo from "../../../components/Book/BookPrimaryInfo/BookPrimar
 import BookAdditionalInfo from "../../../components/Book/BookAdditionalInfo/BookAdditionalInfo";
 
 const bookOfTheDay = (props) => {
-  return (
-    <div className={styles.BookOfTheDay}>
-      <div className={styles.Title}>Doktor Sen</div>
-      <div className={styles.BookContent}>
-        <BookPrimaryInfo book={props.book} />
-        <BookAdditionalInfo book={props.book} />
-      </div>
-    </div>
-  );
+    return (
+        <div className={styles.BookOfTheDay}>
+            <div className={styles.Title}>Doktor Sen</div>
+            <div className={styles.BookContent}>
+                <BookPrimaryInfo book={props.book}/>
+                <BookAdditionalInfo book={props.book}/>
+            </div>
+        </div>
+    );
 };
 
 export default bookOfTheDay;

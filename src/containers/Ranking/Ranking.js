@@ -20,54 +20,54 @@ import ASpakowski from "../../assets/photos/authors/author5.png";
 import OTokarczuk from "../../assets/photos/authors/author6.png";
 
 const ranking = (props) => {
-  const books = [
-    { ranking: 1, name: "Doktor Sen", image: DoktorSen },
-    { ranking: 2, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
-    { ranking: 3, name: "O pólnocy w Czarnobylu", image: OPolnocy },
-    { ranking: 4, name: "Instytut", image: Instytut },
-    { ranking: 5, name: "Precedens", image: Precedens },
-    { ranking: 6, name: "Czerwona Królowa", image: CzerwonaKrolowa },
-    { ranking: 7, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
-    { ranking: 8, name: "Instytut", image: Instytut },
-  ];
+    const books = [
+        {ranking: 1, name: "Doktor Sen", image: DoktorSen},
+        {ranking: 2, name: "Tatuażysta z Auschwitz", image: Tatuazysta},
+        {ranking: 3, name: "O pólnocy w Czarnobylu", image: OPolnocy},
+        {ranking: 4, name: "Instytut", image: Instytut},
+        {ranking: 5, name: "Precedens", image: Precedens},
+        {ranking: 6, name: "Czerwona Królowa", image: CzerwonaKrolowa},
+        {ranking: 7, name: "Tatuażysta z Auschwitz", image: Tatuazysta},
+        {ranking: 8, name: "Instytut", image: Instytut},
+    ];
 
-  const authors = [
-    { ranking: 1, name: "Stephen King", image: StephenKing },
-    { ranking: 2, name: "J.K. Rowling", image: JKRowling },
-    { ranking: 3, name: "J.R.R. Tolkien", image: JRRTolkien },
-    { ranking: 4, name: "Remigiusz Mróz", image: RMroz },
-    { ranking: 5, name: "Andrzej Sapkowski", image: ASpakowski },
-    { ranking: 6, name: "Olga Tokarczuk", image: OTokarczuk },
-    { ranking: 7, name: "J.R.R. Tolkien", image: JRRTolkien },
-    { ranking: 8, name: "Stephen King", image: StephenKing },
-  ];
+    const authors = [
+        {ranking: 1, name: "Stephen King", image: StephenKing},
+        {ranking: 2, name: "J.K. Rowling", image: JKRowling},
+        {ranking: 3, name: "J.R.R. Tolkien", image: JRRTolkien},
+        {ranking: 4, name: "Remigiusz Mróz", image: RMroz},
+        {ranking: 5, name: "Andrzej Sapkowski", image: ASpakowski},
+        {ranking: 6, name: "Olga Tokarczuk", image: OTokarczuk},
+        {ranking: 7, name: "J.R.R. Tolkien", image: JRRTolkien},
+        {ranking: 8, name: "Stephen King", image: StephenKing},
+    ];
 
-  let activeTableHeader = props.isBookRanking ? "Książki" : "Autorzy";
-  let secondTableHeader = props.isBookRanking ? "Autorzy" : "Książki";
-  let tableCaption = props.isBookRanking
-    ? "Lista top 100 najlepszych autorów"
-    : "Lista top 100 najlepszych książek";
+    let activeTableHeader = props.isBookRanking ? "Książki" : "Autorzy";
+    let secondTableHeader = props.isBookRanking ? "Autorzy" : "Książki";
+    let tableCaption = props.isBookRanking
+        ? "Lista top 100 najlepszych autorów"
+        : "Lista top 100 najlepszych książek";
 
-  const secondClicked = () => {
-    props.isBookRanking
-      ? props.history.push("/authors/ranking")
-      : props.history.push("/books/ranking");
-  };
+    const secondClicked = () => {
+        props.isBookRanking
+            ? props.history.push("/authors/ranking")
+            : props.history.push("/books/ranking");
+    };
 
-  return (
-    <React.Fragment>
-      <PageHeader name={"Rankingi"} />
-      <div className={styles.Ranking}>
-        <Ranking
-          tableCaption={tableCaption}
-          secondClicked={secondClicked}
-          activeTableHeader={activeTableHeader}
-          secondTableHeader={secondTableHeader}
-          items={props.isBookRanking ? books : authors}
-        />
-      </div>
-    </React.Fragment>
-  );
+    return (
+        <React.Fragment>
+            <PageHeader name={"Rankingi"}/>
+            <div className={styles.Ranking}>
+                <Ranking
+                    tableCaption={tableCaption}
+                    secondClicked={secondClicked}
+                    activeTableHeader={activeTableHeader}
+                    secondTableHeader={secondTableHeader}
+                    items={props.isBookRanking ? books : authors}
+                />
+            </div>
+        </React.Fragment>
+    );
 };
 
 export default ranking;
