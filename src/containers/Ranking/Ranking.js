@@ -50,8 +50,8 @@ const ranking = (props) => {
 
   const secondClicked = () => {
     props.isBookRanking
-      ? props.history.push("/ranking/authors")
-      : props.history.push("/ranking/books");
+      ? props.history.push("/authors/ranking")
+      : props.history.push("/books/ranking");
   };
 
   return (

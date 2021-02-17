@@ -46,14 +46,14 @@ const SideNavigationBar = (props) => {
       imgActive: BooksActive,
       imgInactive: BooksInactive,
       name: "Książki",
-      link: "/ranking/books",
+      link: "/books/ranking",
     },
     {
       imgAlt: "Author",
       imgActive: AuthorsActive,
       imgInactive: AuthorsInactive,
       name: "Autorzy",
-      link: "/ranking/authors",
+      link: "/authors/ranking",
     },
   ];
   const isHighResScreen = window.matchMedia("(min-width: 1200px)").matches;

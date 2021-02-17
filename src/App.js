@@ -10,23 +10,25 @@ const Categories = React.lazy(() =>
 );
 const Favourites = React.lazy(() =>import("./containers/Favourites/Favourites"));
 const Profile = React.lazy(() =>import("./containers/Profile/Profile"));
+const AddAuthor = React.lazy(() =>import("./containers/AddAuthor/AddAuthor"));
 
 function App() {
   let routes = (
     <Switch>
       <Route
-        path="/ranking/books"
+        path="/books/ranking"
         exact
         component={(props) => <Ranking isBookRanking {...props} />}
       />
       <Route
-        path="/ranking/authors"
+        path="/authors/ranking"
         exact
         component={(props) => <Ranking {...props} />}
       />
       <Route path="/categories" exact component={Categories} />
       <Route path="/favourite" exact component={Favourites} />
       <Route path="/profile/:id" exact component={(props) => <Profile {...props} /> } />
+      <Route path="/authors/new" exact component={AddAuthor} />
       <Route path="/" exact component={Homepage} />
       <Redirect to="/" />
     </Switch>
