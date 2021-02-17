@@ -1,35 +1,35 @@
 .NavigationItems {
-  display: none;
-  position: fixed;
-  background: #24282e;
-  width: 90px;
-  height: 100%;
-  flex-direction: column;
-  -webkit-transition: width 0.75s ease-in-out;
-  -moz-transition: width 0.75s ease-in-out;
-  -o-transition: width 0.75s ease-in-out;
-  transition: width 0.75s ease-in-out;
+    display: none;
+    position: fixed;
+    background: #24282e;
+    width: 90px;
+    height: 100%;
+    flex-direction: column;
+    -webkit-transition: width 0.75s ease-in-out;
+    -moz-transition: width 0.75s ease-in-out;
+    -o-transition: width 0.75s ease-in-out;
+    transition: width 0.75s ease-in-out;
 }
 
 .Hided {
-  width: 90px;
+    width: 90px;
 }
 
 .Expanded {
-  width: 300px;
-  align-items: center;
-  justify-content: center;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
-  .NavigationItems {
-    display: flex;
-  }
+    .NavigationItems {
+        display: flex;
+    }
 }
 
 /*Expand side bar menu*/
 @media (min-width: 1200px) {
-  .NavigationItems {
-    width: 300px;
-  }
+    .NavigationItems {
+        width: 300px;
+    }
 }

@@ -1,69 +1,69 @@
 .Category {
-  width: 90%;
-  height: 180px;
-  max-width: 500px;
-  margin-top: 30px;
-  border-radius: 15px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+    width: 90%;
+    height: 180px;
+    max-width: 500px;
+    margin-top: 30px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .Category img {
-  /*width: 100%;*/
-  height: 100%;
+    /*width: 100%;*/
+    height: 100%;
 }
 
 .ImageFade {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  background: rgba(36, 40, 46, 0.7);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(36, 40, 46, 0.7);
 }
 
 .CategoryName {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  text-align: center;
-  width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    width: 100%;
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
 
-  font-weight: 300;
-  color: #f4f4f4;
+    font-weight: 300;
+    color: #f4f4f4;
 }
 
 @media (min-width: 768px) {
-  .Category {
-    margin: 30px 15px;
-  }
+    .Category {
+        margin: 30px 15px;
+    }
 }
 
 @media (min-width: 992px) {
-  .Category {
-    width: 45%;
-  }
+    .Category {
+        width: 45%;
+    }
 }
 
 @media (min-width: 1200px) {
-  .Category {
-    max-width: 400px;
-    /*min-width: 500px;*/
-    height: 180px;
-    /*margin: 15px;*/
-    border-radius: 15px;
-  }
+    .Category {
+        max-width: 400px;
+        /*min-width: 500px;*/
+        height: 180px;
+        /*margin: 15px;*/
+        border-radius: 15px;
+    }
 
-  .CategoryName {
-    font-size: 36px;
-  }
+    .CategoryName {
+        font-size: 36px;
+    }
 }

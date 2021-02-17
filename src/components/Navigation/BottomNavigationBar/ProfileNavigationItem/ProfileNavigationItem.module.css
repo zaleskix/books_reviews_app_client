@@ -1,79 +1,79 @@
 .ProfileItem {
-  display: flex;
-  width: 20%;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: 1s ease;
+    display: flex;
+    width: 20%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease;
 }
 
 .ProfileItem:hover .ProfileExpandMenu,
 .NavItemImage:hover .ProfileExpandMenu {
-  height: 300px;
-  margin-bottom: 150px;
+    height: 300px;
+    margin-bottom: 150px;
 }
 
 .ProfileItem:hover .ProfileExpandMenuIcons,
 .NavItemImage:hover .ProfileExpandMenuIcons {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 .ProfileItem img {
-  display: inline;
-  margin: 0 auto;
-  height: 100%;
-  width: auto;
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
 }
 
 .ProfileExpandMenu {
-  top: 100%;
-  display: flex;
+    top: 100%;
+    display: flex;
 
-  height: 0;
-  width: 60px;
-  background: #45484d;
-  border-radius: 25px;
-  z-index: 1;
-  transition: all 1s;
+    height: 0;
+    width: 60px;
+    background: #45484d;
+    border-radius: 25px;
+    z-index: 1;
+    transition: all 1s;
 }
 
 .NavItemImage {
-  display: flex;
-  height: 80%;
-  width: 80%;
-  max-height: 60px;
-  max-width: 60px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  z-index: 3;
-  overflow: hidden;
+    display: flex;
+    height: 80%;
+    width: 80%;
+    max-height: 60px;
+    max-width: 60px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    z-index: 3;
+    overflow: hidden;
 }
 
 .ProfileExpandMenuIcons {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 30px auto;
 
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 }
 
 .ProfileExpandMenuIcons a {
-  height: 20%;
+    height: 20%;
 }
 
 @media (min-width: 768px) {
-  .ProfileItem {
-    display: flex;
-    width: 60px;
-    height: 60px;
-  }
+    .ProfileItem {
+        display: flex;
+        width: 60px;
+        height: 60px;
+    }
 }

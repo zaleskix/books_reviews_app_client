@@ -13,68 +13,67 @@ import Settings from "../../../assets/icons/settings_second.svg";
 import Mails from "../../../assets/icons/mails_second.svg";
 import Favourites from "../../../assets/icons/favourites_second.svg";
 import Logout from "../../../assets/icons/logout_second.svg";
-import Search from "../../../assets/icons/logout_second.svg";
 
 const bottomNavigationBar = (props) => {
-  let profileMenu = [
-    {
-      imgAlt: "Settings",
-      imgSrc: Settings,
-      name: "Settings",
-      link: "/settings",
-    },
-    { imgAlt: "Mails", imgSrc: Mails, name: "Mails", link: "/mails" },
-    {
-      imgAlt: "Favourites",
-      imgSrc: Favourites,
-      name: "Favourites",
-      link: "/favourite",
-    },
-    { imgAlt: "Logout", imgSrc: Logout, name: "Logout", link: "/logout" },
-  ];
+    let profileMenu = [
+        {
+            imgAlt: "Settings",
+            imgSrc: Settings,
+            name: "Settings",
+            link: "/settings",
+        },
+        {imgAlt: "Mails", imgSrc: Mails, name: "Mails", link: "/mails"},
+        {
+            imgAlt: "Favourites",
+            imgSrc: Favourites,
+            name: "Favourites",
+            link: "/favourite",
+        },
+        {imgAlt: "Logout", imgSrc: Logout, name: "Logout", link: "/logout"},
+    ];
 
-  return (
-    <div className={styles.NavigationItems}>
-      <ul>
-        <NavigationItem
-          imgAlt={"Home"}
-          imgSrc={Homepage}
-          name={"Home"}
-          link="/"
-          exact
-        />
-        <NavigationItem
-          imgAlt={"Categories"}
-          imgSrc={Categories}
-          name={"Categories"}
-          link="/categories"
-          exact
-        />
-        <ProfileNavigationItem
-          imgAlt={"Profile"}
-          imgSrc={Profile}
-          name={"Profile"}
-          link="/profile"
-          exact
-          profileMenu={profileMenu}
-        />
-        <NavigationItem
-          imgAlt={"Books"}
-          imgSrc={Books}
-          name={"Books"}
-          link="/books/ranking"
-          exact
-        />
-        <NavigationItem
-          imgAlt={"Authors"}
-          imgSrc={Authors}
-          name={"Authors"}
-          link="/authors/ranking"
-          exact
-        />
-      </ul>
-    </div>
-  );
+    return (
+        <div className={styles.NavigationItems}>
+            <ul>
+                <NavigationItem
+                    imgAlt={"Home"}
+                    imgSrc={Homepage}
+                    name={"Home"}
+                    link="/"
+                    exact
+                />
+                <NavigationItem
+                    imgAlt={"Categories"}
+                    imgSrc={Categories}
+                    name={"Categories"}
+                    link="/categories"
+                    exact
+                />
+                <ProfileNavigationItem
+                    imgAlt={"Profile"}
+                    imgSrc={Profile}
+                    name={"Profile"}
+                    link="/profile"
+                    exact
+                    profileMenu={profileMenu}
+                />
+                <NavigationItem
+                    imgAlt={"Books"}
+                    imgSrc={Books}
+                    name={"Books"}
+                    link="/books/ranking"
+                    exact
+                />
+                <NavigationItem
+                    imgAlt={"Authors"}
+                    imgSrc={Authors}
+                    name={"Authors"}
+                    link="/authors/ranking"
+                    exact
+                />
+            </ul>
+        </div>
+    );
 };
 
 export default bottomNavigationBar;

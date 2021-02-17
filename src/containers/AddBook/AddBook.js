@@ -1,35 +1,28 @@
 import React, {useState} from "react";
 
-import styles from "./AddAuthor.module.css";
+import styles from "./AddBook.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import From from "../../components/UI/Form/Form"
 
-const AddAuthor = (props) => {
-    const [authorForm, setAuthorForm] = useState({
+const AddBook = (props) => {
+    const [bookForm, setBookForm] = useState({
         image: {
             type: "file",
-            placeholder: "Zdjęcie autora",
+            placeholder: "Okładka",
             value: "",
             validation: {},
             valid: true,
         },
-        firstName: {
-            type: "input",
-            name: "Imię",
-            placeholder: "Stephen",
-            value: "",
-            validation: {required: true},
-            valid: false,
-            touched: false,
-        },
-        lastName: {
-            type: "input",
-            name: "Nazwisko",
-            placeholder: "King",
-            value: "",
-            validation: {required: true},
-            valid: false,
-            touched: false,
+        authors: {
+            type: "select",
+            name: "Autorzy",
+            options: [
+                {value: "AS", displayValue: "Andrzej Sapkowski"},
+                {value: "RM", displayValue: "Remigiusz Mróz"},
+            ],
+            value: "author",
+            validation: {},
+            valid: true,
         },
         categories: {
             type: "select",
@@ -42,17 +35,35 @@ const AddAuthor = (props) => {
             validation: {},
             valid: true,
         },
-        homepage: {
-            type: "input",
-            name: "Strona autora",
-            placeholder: "https://www.stephenking.com",
+        publishingDate: {
+            type: "date",
+            name: "Data wydania",
             value: "",
-            validation: {},
-            valid: true,
+            validation: {required: true},
+            valid: false,
+            touched: false,
         },
-        biography: {
+        publisher: {
+            type: "input",
+            name: "Wydawnictwo",
+            placeholder: "Nowa Era",
+            value: "",
+            validation: {required: true},
+            valid: false,
+            touched: false,
+        },
+        isbn: {
+            type: "input",
+            name: "ISBN",
+            placeholder: "1-84356-028-3",
+            value: "",
+            validation: {required: true},
+            valid: false,
+            touched: false,
+        },
+        description: {
             type: "textarea",
-            name: "Biografia",
+            name: "Opis",
             placeholder:
                 "Stephen Edwin King – amerykański pisarz, autor głównie literatury grozy. W przeszłości wydawał książki pod pseudonimem Richard Bachman, raz jako John Swithen. Jego książki rozeszły się w nakładzie przekraczającym 350 milionów egzemplarzy, co czyni go jednym z najbardziej poczytnych pisarzy na świecie. ",
             value: "",
@@ -64,12 +75,12 @@ const AddAuthor = (props) => {
     const [isFormValid, setIsFormValid] = useState(false);
 
     return (
-        <div className={styles.AddAuthor}>
-            <PageHeader name={"Dodaj autora"}/>
+        <div className={styles.AddBook}>
+            <PageHeader name={"Dodaj książkę"}/>
             <div className={styles.PageContent}>
                 <From
-                    formTemplate={authorForm}
-                    setFormTemplate={setAuthorForm}
+                    formTemplate={bookForm}
+                    setFormTemplate={setBookForm}
                     isFormValid={isFormValid}
                     setIsFormValid={setIsFormValid}
                 />
@@ -78,4 +89,4 @@ const AddAuthor = (props) => {
     );
 };
 
-export default AddAuthor;
+export default AddBook;

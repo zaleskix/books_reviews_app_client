@@ -11,25 +11,25 @@ import Category from "../../components/Category/Category";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 
 const categories = (props) => {
-  const categoriesData = [
-    { name: "Fantastyka", image: Fantastyka },
-    { name: "Science Fiction", image: ScienceFiction },
-    { name: "Literatura Piękna", image: LiteraturaPiekna },
-    { name: "Kryminał", image: Kryminal },
-    { name: "Horror", image: Horror },
-    { name: "Romans", image: Romans },
-  ];
+    const categoriesData = [
+        {name: "Fantastyka", image: Fantastyka},
+        {name: "Science Fiction", image: ScienceFiction},
+        {name: "Literatura Piękna", image: LiteraturaPiekna},
+        {name: "Kryminał", image: Kryminal},
+        {name: "Horror", image: Horror},
+        {name: "Romans", image: Romans},
+    ];
 
-  let categories = categoriesData.map((category) => (
-    <Category key={category.name} name={category.name} image={category.image} />
-  ));
+    let categories = categoriesData.map((category) => (
+        <Category key={category.name} name={category.name} image={category.image}/>
+    ));
 
-  return (
-    <div className={styles.Categories}>
-      <PageHeader name={"Kategorie"} />
-      <div className={styles.PageContent}>{categories}</div>
-    </div>
-  );
+    return (
+        <div className={styles.Categories}>
+            <PageHeader name={"Kategorie"}/>
+            <div className={styles.PageContent}>{categories}</div>
+        </div>
+    );
 };
 
 export default categories;

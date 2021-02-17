@@ -1,10 +1,10 @@
 .AuthorPhoto {
-  height: 60px;
-  width: 60px;
+    height: 60px;
+    width: 60px;
 }
 
 .AuthorPhoto img {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
 }

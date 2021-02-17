@@ -1,15 +1,15 @@
 .Ranking {
-  width: 100%;
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
-  .Ranking {
-    margin-top: unset;
-    padding-left: 60px;
-    padding-right: 90px;
-  }
+    .Ranking {
+        margin-top: unset;
+        padding-left: 60px;
+        padding-right: 90px;
+    }
 }
