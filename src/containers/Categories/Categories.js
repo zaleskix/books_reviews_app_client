@@ -26,7 +26,7 @@ const categories = (props) => {
 
     return (
         <div className={styles.Categories}>
-            <PageHeader name={"Kategorie"}/>
+            <PageHeader caption={"Kategorie"}/>
             <div className={styles.PageContent}>{categories}</div>
         </div>
     );

@@ -65,7 +65,7 @@ const AddAuthor = (props) => {
 
     return (
         <div className={styles.AddAuthor}>
-            <PageHeader name={"Dodaj autora"}/>
+            <PageHeader caption={"Dodaj autora"}/>
             <div className={styles.PageContent}>
                 <From
                     formTemplate={authorForm}

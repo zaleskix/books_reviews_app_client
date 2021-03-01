@@ -1,8 +1,11 @@
 .BookScore {
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .Rating {
