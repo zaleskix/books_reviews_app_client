@@ -1,4 +1,4 @@
-.BookCover {
+.FullSizePhoto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     margin-bottom: 30px;
 }
 
-.BookCover img {
+.FullSizePhoto img {
     height: 260px;
     width: 180px;
     border-radius: 25px;

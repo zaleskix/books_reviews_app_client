@@ -1,21 +1,15 @@
 import React from "react";
 
-import styles from "./BookDetails.module.css";
-import Image from "../../assets/photos/books/book1.png";
+import styles from "./AuthorDetails.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import Details from "../../components/Common/Details/Details";
-
+import StephenKing from "../../assets/photos/authors/author1.png";
 import UserAvatar from "../../assets/photos/users/user1.jpg";
 
-const bookDetails = (props) => {
-   const book = {
-      id: 1,
-      cover: Image,
-      title: "Doktor Sen",
-      author: {
-         firstName: "Stephen",
-         lastName: "King",
-      },
+const authorDetails = (props) => {
+   const author = {
+      firstName: "Stephen",
+      lastName: "King",
       categories: [
          {
             id: 1,
@@ -26,12 +20,11 @@ const bookDetails = (props) => {
             name: "Kryminał",
          },
       ],
-      publishingDate: "2010-03-12",
-      language: "Polski",
-      publisher: "Prószyński i S-ka",
-      description:
+      website: "https://www.stephenking.com",
+      photo: StephenKing,
+      biography:
          "Kontynuacja bestsellerowego „Lśnienia”! Pamiętacie małego chłopca obdarzonego niezwykłą mocą? Chłopca nękanego przez duchy? Chłopca uwięzionego w odludnym hotelu wraz z opętanym ojcem? Możecie już poznać jego dalsze losy! Grupa staruszków nazywająca się Prawdziwym Węzłem przemierza autostrady Ameryki w poszukiwaniu pożywienia. Z pozoru są nieszkodliwi - emeryci odziani w poliester, nierozstający się ze swoimi samochodami turystycznymi. Jednak Dan Torrance już wie, a rezolutna dwunastolatka Abra Stone wkrótce się przekona, że Prawdziwy Węzeł to prawie nieśmiertelne istoty żywiące się substancją wytwarzaną przez poddane śmiertelnym torturom dzieci obdarzone tym samym darem, co Dan.",
-      ISBN: "9788394997298",
+
       evaluation: {
          rating: 7.5,
          votes: 13201,
@@ -58,30 +51,35 @@ const bookDetails = (props) => {
       },
    };
 
-   let bookInfos = [
+   const authorInfos = [
       {
-         caption: "Autor:",
-         value: book.author.firstName + " " + book.author.lastName,
+         caption: "Imię:",
+         value: author.firstName,
+      },
+      {
+         caption: "Nazwisko:",
+         value: author.lastName,
       },
       {
          caption: "Kategorie:",
-         value: book.categories.map((category) => category.name).join(" | "),
+         value: author.categories.map((category) => category.name).join(" | "),
       },
-      { caption: "Data publikacji:", value: book.publishingDate },
-      { caption: "Język:", value: book.language },
+      { caption: "Strona internetowa:", value: author.website },
    ];
+
+   const authorName = author.firstName + " " + author.lastName;
    return (
-      <div className={styles.BookDetails}>
-         <PageHeader caption={book.title} subcaption={book.author.firstName + " " + book.author.lastName} />
+      <div className={styles.AuthorDetails}>
+         <PageHeader caption={authorName} />
          <Details
-            name={book.title}
-            photo={book.cover}
-            description={{ caption: "Opis:", content: book.description }}
-            evaluation={book.evaluation}
-            detailsInfos={bookInfos}
+            name={authorName}
+            photo={author.photo}
+            description={{ caption: "Biografia:", content: author.biography }}
+            evaluation={author.evaluation}
+            detailsInfos={authorInfos}
          />
       </div>
    );
 };
 
-export default bookDetails;
+export default authorDetails;

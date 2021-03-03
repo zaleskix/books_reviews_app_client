@@ -13,6 +13,7 @@ const Profile = React.lazy(() => import("./containers/Profile/Profile"));
 const AddAuthor = React.lazy(() => import("./containers/AddAuthor/AddAuthor"));
 const AddBook = React.lazy(() => import("./containers/AddBook/AddBook"));
 const BookDetails = React.lazy(() => import("./containers/BookDetails/BookDetails"));
+const AuthorDetails = React.lazy(() => import("./containers/AuthorDetails/AuthorDetails"));
 
 function App() {
     let routes = (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/favourite" exact component={Favourites}/>
             <Route path="/profile/:id" exact component={(props) => <Profile {...props} />}/>
             <Route path="/authors/new" exact component={AddAuthor}/>
+            <Route path="/authors/:id" exact component={(props) => <AuthorDetails {...props} />}/>
             <Route path="/books/new" exact component={AddBook}/>
             <Route path="/books/:id" exact component={(props) => <BookDetails {...props} />}/>
             <Route path="/" exact component={Homepage}/>

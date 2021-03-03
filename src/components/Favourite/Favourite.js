@@ -4,7 +4,7 @@ import {useState} from "react";
 import styles from "./Favourite.module.css";
 
 import Dropdown from "../../assets/icons/dropdown_primary.svg";
-import BookScore from "../Book/BookScore/BookScore";
+import Score from "../Common/Score/Score";
 import ExpandedDiv from "../UI/AnimatedComponents/ExpandedDiv/ExpandedDiv";
 
 const Favourite = (props) => {
@@ -48,7 +48,7 @@ const Favourite = (props) => {
             <ExpandedDiv isExpanded={isMenuExpanded}>
                 <div className={styles.ExpandMenu}>
                     <div className={styles.Score}>
-                        <BookScore
+                        <Score
                             rating={props.rating}
                             numberOfRatings={props.numberOfRatings}
                         />
