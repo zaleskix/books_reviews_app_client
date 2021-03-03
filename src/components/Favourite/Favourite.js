@@ -11,7 +11,6 @@ const Favourite = (props) => {
     const [isMenuExpanded, setExpandMenu] = useState(false);
 
     const expandMenu = () => {
-        console.log("EXPAND MENU" + isMenuExpanded);
         setExpandMenu(!isMenuExpanded);
     };
 

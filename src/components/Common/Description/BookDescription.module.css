@@ -1,0 +1,28 @@
+.Description {
+    display: flex;
+    max-width: 360px;
+    flex-direction: column;
+    margin: 0 15px;
+    border-radius: 25px;
+    border: 1px solid #24282e;
+}
+
+.Caption {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 15px 0 0 15px;
+}
+
+.Content {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 15px;
+}
+
+@media (min-width: 768px) {
+    .Description {
+        max-width: 900px;
+    }
+}

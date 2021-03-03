@@ -3,11 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+
 }
 
 .FullSizePhoto img {
     height: 260px;
-    width: 180px;
+    width: 240px;
     border-radius: 25px;
 }
