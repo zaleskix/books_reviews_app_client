@@ -14,6 +14,7 @@ const AddAuthor = React.lazy(() => import("./containers/AddAuthor/AddAuthor"));
 const AddBook = React.lazy(() => import("./containers/AddBook/AddBook"));
 const BookDetails = React.lazy(() => import("./containers/BookDetails/BookDetails"));
 const AuthorDetails = React.lazy(() => import("./containers/AuthorDetails/AuthorDetails"));
+const Settings = React.lazy(() => import("./containers/Settings/Settings"));
 
 function App() {
     let routes = (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/authors/:id" exact component={(props) => <AuthorDetails {...props} />}/>
             <Route path="/books/new" exact component={AddBook}/>
             <Route path="/books/:id" exact component={(props) => <BookDetails {...props} />}/>
+            <Route path="/settings" exact component={(props) => <Settings {...props} />}/>
             <Route path="/" exact component={Homepage}/>
             <Redirect to="/"/>
         </Switch>

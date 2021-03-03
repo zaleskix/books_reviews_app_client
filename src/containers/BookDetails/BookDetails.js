@@ -73,13 +73,15 @@ const bookDetails = (props) => {
    return (
       <div className={styles.BookDetails}>
          <PageHeader caption={book.title} subcaption={book.author.firstName + " " + book.author.lastName} />
-         <Details
-            name={book.title}
-            photo={book.cover}
-            description={{ caption: "Opis:", content: book.description }}
-            evaluation={book.evaluation}
-            detailsInfos={bookInfos}
-         />
+         <div className={styles.PageContent}>
+            <Details
+               name={book.title}
+               photo={book.cover}
+               description={{ caption: "Opis:", content: book.description }}
+               evaluation={book.evaluation}
+               detailsInfos={bookInfos}
+            />
+         </div>
       </div>
    );
 };

@@ -139,6 +139,7 @@
 @media (min-width: 768px) {
     .PageContent {
         margin-top: 0;
+        margin-top: 90px;
     }
 
     .ProfilePictureSection {
