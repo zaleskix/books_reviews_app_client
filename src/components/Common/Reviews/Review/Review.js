@@ -1,6 +1,6 @@
 import React from "react";
 
-import ScoreButtons from "../../UI/Buttons/ScoreButtons/ScoreButtons";
+import ScoreButtons from "../../../UI/Buttons/ScoreButtons/ScoreButtons";
 import styles from "./Review.module.css";
 
 const review = (props) => {

@@ -6,7 +6,6 @@
 }
 
 .BookInfo,
-.BookCover,
 .Reviews,
 .BookAdditionalInfo,
 .BookContent {
@@ -44,10 +43,6 @@
 
    .BookAdditionalInfo {
       flex-direction: row;  
-   }
-
-   .BookCover {
-      flex-direction: row;
    }
 }
 

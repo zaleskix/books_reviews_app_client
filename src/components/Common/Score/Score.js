@@ -1,10 +1,10 @@
 import React from "react";
 
-import styles from "./BookScore.module.css";
+import styles from "./Score.module.css";
 
-const bookScore = (props) => {
+const score = (props) => {
     return (
-        <div className={styles.BookScore}>
+        <div className={styles.Score}>
             <div className={styles.Rating}>{props.rating} / 10</div>
             <div className={styles.NumberOfRatings}>
                 ( {props.numberOfRatings} recenzji )
@@ -13,4 +13,4 @@ const bookScore = (props) => {
     );
 };
 
-export default bookScore;
+export default score;
