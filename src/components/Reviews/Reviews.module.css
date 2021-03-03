@@ -1,0 +1,30 @@
+.Reviews {
+   display: flex;
+   max-width: 360px;
+   min-width: 300px;
+   min-height: 90px;
+   flex-direction: column;
+   margin: 15px;
+   border-radius: 25px;
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.Content {
+   width: 100%;
+   height: 100%;
+   margin-top: 30px;
+}
+
+.Caption {
+   font-family: "Montserrat", sans-serif;
+   font-size: 22px;
+   font-weight: 700;
+   margin: 30px 0 0 30px;
+}
+
+
+@media (min-width: 768px) {
+   .Reviews {
+      max-width: 900px;
+   }
+}

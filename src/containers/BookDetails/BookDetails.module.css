@@ -7,6 +7,7 @@
 
 .BookInfo,
 .BookCover,
+.Reviews,
 .BookAdditionalInfo,
 .BookContent {
    display: flex;
@@ -19,14 +20,16 @@
 
 .Buttons {
    width: 360px;
-   height: 90px;
+   /* height: 90px; */
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-top: 60px;
+   margin-top: 30px;
+   margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
+   .Reviews,
    .BookContent {
       flex-direction: column;
       align-items: flex-start;
@@ -51,5 +54,9 @@
 @media (min-width: 992px) {
    .BookInfo {
       margin-left: 15%;
+   }
+
+   .Reviews {
+      align-items: center;
    }
 }
