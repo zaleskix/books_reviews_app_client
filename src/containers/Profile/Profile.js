@@ -36,7 +36,7 @@ const profile = (props) => {
 
     return (
         <div className={styles.Profile}>
-            <PageHeader name={user.name}/>
+            <PageHeader caption={user.name}/>
             <div className={styles.PageContent}>
                 <div className={styles.ProfilePictureSection}>
                     <div className={styles.ProfilePicture}>

@@ -56,7 +56,7 @@ const ranking = (props) => {
 
     return (
         <React.Fragment>
-            <PageHeader name={"Rankingi"}/>
+            <PageHeader caption={"Rankingi"}/>
             <div className={styles.Ranking}>
                 <Ranking
                     tableCaption={tableCaption}

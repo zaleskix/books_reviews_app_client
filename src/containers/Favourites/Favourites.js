@@ -63,7 +63,7 @@ const favourites = (props) => {
 
     return (
         <div className={styles.Favourites}>
-            <PageHeader name={"Ulubione"}/>
+            <PageHeader caption={"Ulubione"}/>
             <div className={styles.PageContent}>{favourites}</div>
         </div>
     );

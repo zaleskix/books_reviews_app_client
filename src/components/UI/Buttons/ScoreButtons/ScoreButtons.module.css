@@ -1,0 +1,9 @@
+.Scorebutton {
+    display: flex;
+}
+
+.Upvote,
+.Downvote {
+    display: flex;
+    margin: 5px;
+}

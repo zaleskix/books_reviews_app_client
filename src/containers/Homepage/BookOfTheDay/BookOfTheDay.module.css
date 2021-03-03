@@ -1,36 +1,82 @@
 .BookOfTheDay {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15px;
+   width: 100%;
+   max-width: 1200px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 15px;
 }
+.BookAdditionalInfo {
+   display: none;
+   width: 80%;
+   height: 100%;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+ 
+ .Buttons {
+   width: 360px;
+   height: 90px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 60px;
+ }
+ 
 
 .BookContent {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+   width: 100%;
+   height: 400px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
 
 .Title {
-    font-family: "Playfair Display", serif;
-    font-size: 32px;
-    font-weight: 900;
-    color: #45484d;
+   font-family: "Playfair Display", serif;
+   font-size: 32px;
+   font-weight: 900;
+   color: #45484d;
+}
+
+.BookPrimaryInfo {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 60px;
+   justify-content: center;
 }
 
 @media (min-width: 768px), (min-width: 1600px) {
-    .BookContent {
-        flex-direction: row;
-    }
+   .BookContent {
+      flex-direction: row;
+   }
+
+   .BookAdditionalInfo {
+      display: flex;
+   }
+
+   .BookPrimaryInfo {
+      width: 40%;
+      margin: 30px 0 0 60px;
+   }
 }
 
 @media (min-width: 1200px) and (max-width: 1600px) {
-    .BookContent {
-        flex-direction: column;
-    }
+   .BookContent {
+      flex-direction: column;
+   }
+
+   .BookAdditionalInfo {
+      display: none;
+   }
+
+   .BookPrimaryInfo {
+      width: 100%;
+      margin: 30px 0 0 0;
+   }
 }

@@ -76,7 +76,7 @@ const AddBook = (props) => {
 
     return (
         <div className={styles.AddBook}>
-            <PageHeader name={"Dodaj książkę"}/>
+            <PageHeader caption={"Dodaj książkę"}/>
             <div className={styles.PageContent}>
                 <From
                     formTemplate={bookForm}
