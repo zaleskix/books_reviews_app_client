@@ -1,10 +1,19 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 
 import styles from "./RankingItem.module.css";
 
 const rankingItem = (props) => {
+    const rankingItemClicked = (identifier) => {
+        if (identifier.match("^book")) {
+           props.history.push("/books/" + identifier);
+        } else {
+           props.history.push("/authors/" + identifier);
+        }
+     };
+
     return (
-        <div className={styles.RankingItem}>
+        <div className={styles.RankingItem} onClick={() => rankingItemClicked(props.identifier)}>
             <div className={styles.ItemImage}>
                 <img alt={props.name} src={props.image}/>
             </div>
@@ -16,4 +25,4 @@ const rankingItem = (props) => {
     );
 };
 
-export default rankingItem;
+export default withRouter(rankingItem);

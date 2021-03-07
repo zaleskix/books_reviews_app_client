@@ -15,6 +15,14 @@
     border: 1px #e0e0e1 solid;
 }
 
+.RankingItem:hover {
+    background: linear-gradient(130deg, #e0e0e1 0%, #e0e0e1 100%);
+    box-shadow: none;
+    color: #24282e;
+    border-radius: 45px;
+    transition: 0.3s all ease-in-out;
+ }
+
 .ItemImage {
     height: 240px;
     width: 160px;
@@ -71,9 +79,10 @@
     }
 }
 
+
 @media (min-width: 1200px) {
     .RankingItem {
-        width: 280px;
+        width: 260px;
         margin-right: 30px;
         margin-left: 30px;
         /*width: 20%;*/

@@ -38,6 +38,7 @@ const bookDetails = (props) => {
          reviews: [
             {
                author: {
+                  identifier: "user-123-123",
                   name: "Daniel",
                   avatar: UserAvatar,
                },
@@ -47,6 +48,7 @@ const bookDetails = (props) => {
             },
             {
                author: {
+                  identifier: "user-123-123",
                   name: "Anna",
                   avatar: UserAvatar,
                },

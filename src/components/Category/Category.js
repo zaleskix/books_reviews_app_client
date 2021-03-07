@@ -1,15 +1,20 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 
 import styles from "./Category.module.css";
 
 const category = (props) => {
+    const categoryClicked = (categoryId) => {
+        props.history.push("/categories/" + categoryId);
+     };
+
     return (
-        <div className={styles.Category}>
-            <img alt={props.name} src={props.image}/>
+        <div className={styles.Category} onClick={() => categoryClicked(props.category.identifier)}>
+            <img alt={props.category.name} src={props.category.image}/>
             <div className={styles.ImageFade}/>
-            <div className={styles.CategoryName}>{props.name}</div>
+            <div className={styles.CategoryName}>{props.category.name}</div>
         </div>
     );
 };
 
-export default category;
+export default withRouter(category);

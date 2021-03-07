@@ -12,16 +12,16 @@ import PageHeader from "../../components/UI/PageHeader/PageHeader";
 
 const categories = (props) => {
     const categoriesData = [
-        {name: "Fantastyka", image: Fantastyka},
-        {name: "Science Fiction", image: ScienceFiction},
-        {name: "Literatura Piękna", image: LiteraturaPiekna},
-        {name: "Kryminał", image: Kryminal},
-        {name: "Horror", image: Horror},
-        {name: "Romans", image: Romans},
+        {identifier: "category-123-123-123", name: "Fantastyka", image: Fantastyka},
+        {identifier: "category-234-234-234", name: "Science Fiction", image: ScienceFiction},
+        {identifier: "category-345-345-345", name: "Literatura Piękna", image: LiteraturaPiekna},
+        {identifier: "category-456-456-456", name: "Kryminał", image: Kryminal},
+        {identifier: "category-567-567-567", name: "Horror", image: Horror},
+        {identifier: "category-678-678-678", name: "Romans", image: Romans},
     ];
 
     let categories = categoriesData.map((category) => (
-        <Category key={category.name} name={category.name} image={category.image}/>
+        <Category key={category.name} category={category}/>
     ));
 
     return (

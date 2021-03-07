@@ -21,25 +21,25 @@ import OTokarczuk from "../../assets/photos/authors/author6.png";
 
 const ranking = (props) => {
    const books = [
-      { ranking: 1, name: "Doktor Sen", image: DoktorSen },
-      { ranking: 2, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
-      { ranking: 3, name: "O pólnocy w Czarnobylu", image: OPolnocy },
-      { ranking: 4, name: "Instytut", image: Instytut },
-      { ranking: 5, name: "Precedens", image: Precedens },
-      { ranking: 6, name: "Czerwona Królowa", image: CzerwonaKrolowa },
-      { ranking: 7, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
-      { ranking: 8, name: "Instytut", image: Instytut },
+      {identifier: "book-1", ranking: 1, name: "Doktor Sen", image: DoktorSen },
+      {identifier: "book-2",  ranking: 2, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
+      {identifier: "book-3",  ranking: 3, name: "O pólnocy w Czarnobylu", image: OPolnocy },
+      {identifier: "book-4",  ranking: 4, name: "Instytut", image: Instytut },
+      {identifier: "book-5",  ranking: 5, name: "Precedens", image: Precedens },
+      {identifier: "book-6",  ranking: 6, name: "Czerwona Królowa", image: CzerwonaKrolowa },
+      {identifier: "book-7",  ranking: 7, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
+      {identifier: "book-8",  ranking: 8, name: "Instytut", image: Instytut },
    ];
 
    const authors = [
-      { ranking: 1, name: "Stephen King", image: StephenKing },
-      { ranking: 2, name: "J.K. Rowling", image: JKRowling },
-      { ranking: 3, name: "J.R.R. Tolkien", image: JRRTolkien },
-      { ranking: 4, name: "Remigiusz Mróz", image: RMroz },
-      { ranking: 5, name: "Andrzej Sapkowski", image: ASpakowski },
-      { ranking: 6, name: "Olga Tokarczuk", image: OTokarczuk },
-      { ranking: 7, name: "J.R.R. Tolkien", image: JRRTolkien },
-      { ranking: 8, name: "Stephen King", image: StephenKing },
+      {identifier: "author-1",  ranking: 1, name: "Stephen King", image: StephenKing },
+      {identifier: "author-2",   ranking: 2, name: "J.K. Rowling", image: JKRowling },
+      {identifier: "author-3",   ranking: 3, name: "J.R.R. Tolkien", image: JRRTolkien },
+      {identifier: "author-4",   ranking: 4, name: "Remigiusz Mróz", image: RMroz },
+      {identifier: "author-5",   ranking: 5, name: "Andrzej Sapkowski", image: ASpakowski },
+      {identifier: "author-6",   ranking: 6, name: "Olga Tokarczuk", image: OTokarczuk },
+      {identifier: "author-7",   ranking: 7, name: "J.R.R. Tolkien", image: JRRTolkien },
+      {identifier: "author-8",   ranking: 8, name: "Stephen King", image: StephenKing },
    ];
 
    let activeTableHeader = props.isBookRanking ? "Książki" : "Autorzy";
@@ -50,6 +50,14 @@ const ranking = (props) => {
       props.isBookRanking ? props.history.push("/authors/ranking") : props.history.push("/books/ranking");
    };
 
+   const addBoo = () => {
+      props.isBookRanking ? props.history.push("/authors/ranking") : props.history.push("/books/ranking");
+   };
+
+   const addButton = props.isBookRanking ?
+      {text: "Dodaj ksiązkę", clicked: () => props.history.push("/books/new")} :
+      {text: "Dodaj autora", clicked: () => props.history.push("/authors/new")};
+
    return (
       <div className={styles.Ranking}>
          <PageHeader caption={"Rankingi"} />
@@ -59,6 +67,7 @@ const ranking = (props) => {
                secondClicked={secondClicked}
                activeTableHeader={activeTableHeader}
                secondTableHeader={secondTableHeader}
+               addButton={addButton}
                items={props.isBookRanking ? books : authors}
             />
          </div>

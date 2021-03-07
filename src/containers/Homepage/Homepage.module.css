@@ -1,124 +1,124 @@
 .Homepage,
 .BookOfTheDay,
 .TopAuthors {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .DiscoverCategories {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 60px;
-    padding-right: 90px;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-left: 60px;
+   padding-right: 90px;
 }
 
 .HomepageTop {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 90px;
-    padding-left: 60px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-right: 90px;
+   padding-left: 60px;
 }
 
 .Splitter {
-    display: flex;
-    /*width: 90%;*/
-    width: calc(100% - 150px);
-    max-width: 1200px;
-    height: 2px;
-    min-height: 2px;
-    background: #45484d;
-    margin: 15px 90px 15px 60px;
+   display: flex;
+   /*width: 90%;*/
+   width: calc(100% - 150px);
+   max-width: 1200px;
+   height: 2px;
+   min-height: 2px;
+   background: #45484d;
+   margin: 15px 90px 15px 60px;
 }
 
 .Caption {
-    font-family: "Playfair Display", serif;
-    font-size: 42px;
-    font-weight: 900;
-    width: 100%;
-    text-align: center;
-    color: #24282e;
-    margin-top: 60px;
-    /*padding-left: 60px;*/
-    /*padding-right: 90px;*/
-    padding-bottom: 15px;
-    border-bottom: 2px solid #24282e;
+   font-family: "Playfair Display", serif;
+   font-size: 42px;
+   font-weight: 900;
+   width: 100%;
+   text-align: center;
+   color: #24282e;
+   margin-top: 60px;
+   /*padding-left: 60px;*/
+   /*padding-right: 90px;*/
+   padding-bottom: 15px;
+   border-bottom: 2px solid #24282e;
 }
 
 .VerticalSplitter {
-    display: none;
+   display: none;
 }
 
 @media (min-width: 1200px) {
-    .HomepageTop {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 1200px;
-    }
+   .HomepageTop {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 1200px;
+   }
 
-    .DiscoverCategories {
-        max-width: 1200px;
-    }
+   .DiscoverCategories {
+      max-width: 1200px;
+   }
 
-    .BookOfTheDay {
-        width: 50%;
-        height: 700px;
-        padding-right: 30px;
-    }
+   .BookOfTheDay {
+      width: 50%;
+      height: 700px;
+      padding-right: 30px;
+   }
 
-    .TopAuthors {
-        width: 45%;
-        height: 700px;
-        /*margin-right: 60px;*/
-        padding-left: 30px;
-        justify-content: flex-start;
-        align-items: flex-end;
-    }
+   .TopAuthors {
+      width: 45%;
+      height: 700px;
+      /*margin-right: 60px;*/
+      padding-left: 30px;
+      justify-content: flex-start;
+      align-items: flex-end;
+   }
 
-    .VerticalSplitter {
-        display: flex;
-        width: 1px;
-        min-width: 1px;
-        margin-top: 180px;
-        background: #24282e;
-        height: 450px;
-    }
+   .VerticalSplitter {
+      display: flex;
+      width: 1px;
+      min-width: 1px;
+      margin-top: 180px;
+      background: #24282e;
+      height: 450px;
+   }
 }
 
 @media (min-width: 1600px) {
-    .HomepageTop {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+   .HomepageTop {
+      flex-direction: row;
+      justify-content: space-between;
+   }
 
-    .BookOfTheDay {
-        width: 50%;
-        height: 700px;
-    }
+   .BookOfTheDay {
+      width: 50%;
+      height: 700px;
+   }
 
-    .TopAuthors {
-        width: 45%;
-        height: 700px;
-        justify-content: flex-start;
-    }
+   .TopAuthors {
+      width: 45%;
+      height: 700px;
+      justify-content: flex-start;
+   }
 
-    .Splitter {
-        width: 100%;
-    }
+   .Splitter {
+      width: 100%;
+   }
 
-    .VerticalSplitter {
-        display: flex;
-        width: 1px;
-        min-width: 1px;
-        margin-top: 180px;
-        background: #24282e;
-        height: 450px;
-    }
+   .VerticalSplitter {
+      display: flex;
+      width: 1px;
+      min-width: 1px;
+      margin-top: 180px;
+      background: #24282e;
+      height: 450px;
+   }
 }

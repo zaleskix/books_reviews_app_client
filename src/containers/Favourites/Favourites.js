@@ -12,6 +12,7 @@ import JKRowling from "../../assets/photos/authors/author2.png";
 const favourites = (props) => {
     const favouritesData = [
         {
+            identifier: "book-123-123-123",
             ranking: 1,
             caption: "Doktor Sen",
             subcaption: "Stephen King",
@@ -20,6 +21,7 @@ const favourites = (props) => {
             image: DoktorSen,
         },
         {
+            identifier: "book-123-123-123",
             ranking: 2,
             caption: "Tatuażysta z Auschwitz",
             subcaption: "Heather Morris",
@@ -28,6 +30,7 @@ const favourites = (props) => {
             image: Tatuazysta,
         },
         {
+            identifier: "book-123-123-123",
             ranking: 3,
             caption: "O pólnocy w Czarnobylu",
             subcaption: "Adam Higgibottam",
@@ -36,6 +39,7 @@ const favourites = (props) => {
             image: OPolnocy,
         },
         {
+            identifier: "author-123-123-123",
             ranking: 4,
             caption: "Stephen King",
             rating: "9.1",
@@ -43,6 +47,7 @@ const favourites = (props) => {
             image: StephenKing,
         },
         {
+            identifier: "author-123-123-123",
             ranking: 5,
             caption: "J.K. Rowling",
             rating: "7.8",
@@ -54,6 +59,7 @@ const favourites = (props) => {
     let favourites = favouritesData.map((favourite) => (
         <Favourite
             key={favourite.caption}
+            identifier={favourite.identifier}
             caption={favourite.caption}
             subcaption={favourite.subcaption}
             rating={favourite.rating}
