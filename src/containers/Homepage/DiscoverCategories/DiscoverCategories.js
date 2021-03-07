@@ -6,7 +6,7 @@ import Category from "../../../components/Category/Category";
 
 const discoverCategories = (props) => {
     let categories = props.categories.map((category) => (
-        <Category key={category.name} name={category.name} image={category.image}/>
+        <Category key={category.name} category={category}/>
     ));
 
     return <div className={styles.DiscoverCategories}>{categories}</div>;

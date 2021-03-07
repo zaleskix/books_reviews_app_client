@@ -8,9 +8,7 @@ const topAuthors = (props) => {
     let authorsRanking = props.authors.map((author) => (
         <AuthorItem
             key={author.name}
-            image={author.image}
-            name={author.name}
-            ranking={author.ranking}
+            author={author}
         />
     ));
 

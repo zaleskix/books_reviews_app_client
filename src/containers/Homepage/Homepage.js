@@ -18,20 +18,21 @@ import DoktorSen from "../../assets/photos/books/book1.png";
 
 const homepage = (props) => {
     const authors = [
-        {name: "Stephen King", ranking: 1, image: SKing},
-        {name: "J.K. Rowling", ranking: 2, image: JKRowling},
-        {name: "J. R. R. Tolkien", ranking: 3, image: JRRTolkien},
-        {name: "Remigiusz Mróz", ranking: 4, image: RMroz},
-        {name: "Andrzej Sapkowski", ranking: 5, image: ASapkowski},
+        {identifier: "author-82318213-2138asd-asd123", name: "Stephen King", ranking: 1, image: SKing},
+        {identifier: "author-02190jwd-dasj12k-mnn11", name: "J.K. Rowling", ranking: 2, image: JKRowling},
+        {identifier: "author-jiqew9-pkdaposa-nqewoj", name: "J. R. R. Tolkien", ranking: 3, image: JRRTolkien},
+        {identifier: "author-w0qe-120939-21o3jb1b", name: "Remigiusz Mróz", ranking: 4, image: RMroz},
+        {identifier: "author-da8a8s9d-1203j-zcpoczpo", name: "Andrzej Sapkowski", ranking: 5, image: ASapkowski},
     ];
 
     const categories = [
-        {name: "Fantastyka", image: Fantastyka},
-        {name: "Science Fiction", image: ScienceFiction},
-        {name: "Literatura Piękna", image: LiteraturaPiekna},
+        {identifier: "category-123asd123-0132i0jeqw-312-sad", name: "Fantastyka", image: Fantastyka},
+        {identifier: "category-lejwqo12-qweowqpe[wqe-das-123da", name: "Science Fiction", image: ScienceFiction},
+        {identifier: "category-okdoak[s-weiq-iqw-0=eqwi-sad", name: "Literatura Piękna", image: LiteraturaPiekna},
     ];
 
     const bookOfTheDay = {
+        identifier: "book-123-123-123-123-12",
         name: "Doktor Sen",
         image: DoktorSen,
         rating: "7.5",
@@ -39,6 +40,10 @@ const homepage = (props) => {
         description:
             "Kontynuacja bestsellerowego „Lśnienia”! Pamiętacie małego chłopca obdarzonego niezwykłą mocą? Chłopca nękanego przez duchy? Chłopca uwięzionego w odludnym hotelu wraz z opętanym ojcem? Możecie już poznać jego dalsze losy!",
     };
+
+    const bookClicked = (bookId) => {
+        props.history.push("/books/" + bookId);
+     };
 
     return (
         <div className={styles.Homepage}>

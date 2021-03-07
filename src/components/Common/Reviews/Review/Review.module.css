@@ -21,7 +21,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
+
+.AuthorInfo:hover {
+    background: linear-gradient(130deg, #e0e0e1 0%, #e0e0e1 100%);
+    box-shadow: none;
+    color: #24282e;
+    margin-left: 15px;
+    border-radius: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: 0.3s all ease-in-out;
+ }
 
 .AuthorAvatar {
     display: flex;
@@ -51,6 +65,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-right: 15px;
 }
 
 .PositiveScore {

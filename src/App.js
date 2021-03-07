@@ -31,7 +31,7 @@ function App() {
             />
             <Route path="/categories" exact component={Categories}/>
             <Route path="/favourite" exact component={Favourites}/>
-            <Route path="/profile/:id" exact component={(props) => <Profile {...props} />}/>
+            <Route path="/user/:id" exact component={(props) => <Profile {...props} />}/>
             <Route path="/authors/new" exact component={AddAuthor}/>
             <Route path="/authors/:id" exact component={(props) => <AuthorDetails {...props} />}/>
             <Route path="/books/new" exact component={AddBook}/>
