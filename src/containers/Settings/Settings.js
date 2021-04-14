@@ -1,4 +1,4 @@
-import React, { useState, userEffect, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import styles from "./Settings.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
@@ -10,6 +10,7 @@ import Avatar from "../../assets/photos/users/user1.jpg";
 import From from "../../components/UI/Form/Form";
 
 const Settings = (props) => {
+   if (!props.token) props.history.push("/login")
    const user = {
       photo: Avatar,
       username: "zaleskix",
@@ -100,7 +101,8 @@ const Settings = (props) => {
       }
 
       setIsFormValid(formValidity);
-   });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   },[]);
 
    const expandMenu = () => {
       setExpandMenu(!isMenuExpanded);

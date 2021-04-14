@@ -1,43 +1,49 @@
 .Primary {
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 
-    padding-bottom: 15px;
-    padding-top: 15px;
-    border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .Secondary {
-    width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
-    padding-top: 15px;
-
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-
-    padding-bottom: 15px;
-
-    border-radius: 25px;
-    /* box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset; */
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-top: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 15px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .Primary:hover,
 .Secondary:hover {
-    background: linear-gradient(130deg, #e0e0e1 0%, #e0e0e1 100%);
-    box-shadow: none;
-    color: #24282e;
-    border-radius: 45px;
-    transition: 0.3s all ease-in-out;
- }
+  background: linear-gradient(130deg, #e0e0e1 0%, #e0e0e1 100%);
+  box-shadow: none;
+  color: #24282e;
+  border-radius: 45px;
+  transition: 0.3s all ease-in-out;
+}
+
+.Remove {
+  color: #7b0000;
+  font-weight: 700;
+}

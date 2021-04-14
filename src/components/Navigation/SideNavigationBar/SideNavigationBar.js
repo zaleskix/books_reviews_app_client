@@ -25,6 +25,7 @@ const SideNavigationBar = (props) => {
             imgInactive: HomepageInactive,
             name: "Strona główna",
             link: "/",
+            onlyForAuthenticatedUsers: false
         },
         {
             imgAlt: "Category",
@@ -32,6 +33,7 @@ const SideNavigationBar = (props) => {
             imgInactive: CategoriesInactive,
             name: "Kategorie",
             link: "/categories",
+            onlyForAuthenticatedUsers: false
         },
         {
             imgAlt: "Favourites",
@@ -39,6 +41,7 @@ const SideNavigationBar = (props) => {
             imgInactive: FavouritesInactive,
             name: "Ulubione",
             link: "/favourite",
+            onlyForAuthenticatedUsers: true
         },
         {name: "Splitter"},
         {
@@ -47,6 +50,7 @@ const SideNavigationBar = (props) => {
             imgInactive: BooksInactive,
             name: "Książki",
             link: "/books/ranking",
+            onlyForAuthenticatedUsers: false
         },
         {
             imgAlt: "Author",
@@ -54,6 +58,7 @@ const SideNavigationBar = (props) => {
             imgInactive: AuthorsInactive,
             name: "Autorzy",
             link: "/authors/ranking",
+            onlyForAuthenticatedUsers: false
         },
     ];
     const isHighResScreen = window.matchMedia("(min-width: 1200px)").matches;
@@ -91,11 +96,13 @@ const SideNavigationBar = (props) => {
 
             <SearchBar iconOnly={!isMenuExpanded}/>
             <MainNavigationItems
+                isAuth={props.isAuth}
                 navigationData={mainNavigationData}
                 pathname={pathname}
                 isMenuExpanded={isMenuExpanded}
             />
             <ProfileNavigationItems
+                isAuth={props.isAuth}
                 pathname={pathname}
                 isMenuExpanded={isMenuExpanded}
             />

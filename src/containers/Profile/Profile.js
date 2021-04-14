@@ -13,6 +13,7 @@ import Book4 from "../../assets/photos/books/book4.png";
 import Book5 from "../../assets/photos/books/book5.png";
 
 const profile = (props) => {
+   if (!props.token) props.history.push("/login")
    const user = {
       id: 1,
       name: "Ania Kowalska",

@@ -10,6 +10,7 @@ import StephenKing from "../../assets/photos/authors/author1.png";
 import JKRowling from "../../assets/photos/authors/author2.png";
 
 const favourites = (props) => {
+    if (!props.token) props.history.push("/login")
     const favouritesData = [
         {
             identifier: "book-123-123-123",

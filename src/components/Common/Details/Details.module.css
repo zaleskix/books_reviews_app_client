@@ -1,68 +1,76 @@
 .Details {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .InfoItems {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
- 
- .Info,
- .Photo,
- .Reviews,
- .AdditionalInfo,
- .Content {
-    display: flex;
+
+.Info,
+.Photo,
+.Reviews,
+.AdditionalInfo,
+.Content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.Evaluation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Buttons {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .Reviews,
+  .Content {
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    align-items: flex-start;
+    padding-left: 60px;
+    padding-right: 90px;
+  }
+
+  .Info {
+    margin-left: 30px;
+    max-width: 400px;
+  }
+
+  .AdditionalInfo {
+    flex-direction: row;
+  }
+
+  .Photo {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 992px) {
+  .Info {
+    margin-left: 15%;
+  }
+
+  .Reviews {
     align-items: center;
-    justify-content: center;
- }
- 
- .Buttons {
-    width: 360px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 15px;
- }
- 
- @media (min-width: 768px) {
-    .Reviews,
-    .Content {
-       flex-direction: column;
-       align-items: flex-start;
-       padding-left: 60px;
-       padding-right: 90px;
-    }
- 
-    .Info {
-       margin-left: 30px;
-       max-width: 400px;
-    }
- 
-    .AdditionalInfo {
-       flex-direction: row;
-    }
- 
-    .Photo {
-       flex-direction: row;
-    }
- }
- 
- @media (min-width: 992px) {
-    .Info {
-       margin-left: 15%;
-    }
- 
-    .Reviews {
-       align-items: center;
-    }
- }
- 
+  }
+}

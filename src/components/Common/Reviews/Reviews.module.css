@@ -25,6 +25,9 @@
 
 @media (min-width: 768px) {
    .Reviews {
+      min-width: 600px;
       max-width: 900px;
+      margin: 15px 0;
+      padding: 15px;
    }
 }

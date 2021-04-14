@@ -28,6 +28,14 @@
     width: 160px;
     border-radius: 25px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.ItemImage img{
+    height: 240px;
+    /*width: 160px;*/
 }
 
 .ItemCaption {

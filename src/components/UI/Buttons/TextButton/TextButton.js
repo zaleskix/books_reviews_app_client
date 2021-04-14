@@ -3,9 +3,13 @@ import React from "react";
 import styles from "./TextButton.module.css";
 
 const textButton = (props) => {
-    let style = props.isPrimary ? styles.Primary : styles.Secondary;
 
-    return <div className={style} onClick={props.clicked}>{props.text}</div>;
+    const buttonStyles = [props.isPrimary ? styles.Primary : styles.Secondary];
+
+    if (props.removeButton) {
+        buttonStyles.push(styles.Remove)    }
+
+    return <div className={buttonStyles.join(" ")} onClick={props.clicked}>{props.text}</div>;
 };
 
 export default textButton;

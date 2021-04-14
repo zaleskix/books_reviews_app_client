@@ -41,9 +41,6 @@ const homepage = (props) => {
             "Kontynuacja bestsellerowego „Lśnienia”! Pamiętacie małego chłopca obdarzonego niezwykłą mocą? Chłopca nękanego przez duchy? Chłopca uwięzionego w odludnym hotelu wraz z opętanym ojcem? Możecie już poznać jego dalsze losy!",
     };
 
-    const bookClicked = (bookId) => {
-        props.history.push("/books/" + bookId);
-     };
 
     return (
         <div className={styles.Homepage}>
