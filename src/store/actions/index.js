@@ -36,6 +36,17 @@ export {
   downvoteReview,
 } from "./review";
 
+export {
+  addUser,
+  getUsers,
+  getUserDetails,
+  editUser,
+  removeUser,
+  finishRegister,
+  addFavToUser,
+  removeFavToUser,
+} from "./user";
+
 export { getUserInfo } from "./util";
 
 export {

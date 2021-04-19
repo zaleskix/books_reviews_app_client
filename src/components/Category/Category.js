@@ -9,7 +9,7 @@ const category = (props) => {
      };
 
     return (
-        <div className={styles.Category} onClick={() => categoryClicked(props.category.identifier)}>
+        <div className={styles.Category} onClick={() => categoryClicked(props.category.categoryExternalId)}>
             <img alt={props.category.name} src={`data:image/png;base64,${props.category.image}`}/>
             <div className={styles.ImageFade}/>
             <div className={styles.CategoryName}>{props.category.name}</div>

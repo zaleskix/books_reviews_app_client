@@ -9,12 +9,12 @@ const form = (props) => {
     const formData = {};
     for (let formElementID in props.formTemplate) {
       props.formTemplate[formElementID].type === "photo"
-        ? (formData[formElementID] = props.formTemplate[
+        ? (formData[formElementID] = props.formTemplate[formElementID].value ? props.formTemplate[
             formElementID
           ].value[0].slice(
             props.formTemplate[formElementID].value[0].indexOf("base64,") +
               "base64,".length
-          ))
+          ): null)
         : (formData[formElementID] = props.formTemplate[formElementID].value);
     }
 

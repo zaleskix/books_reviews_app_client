@@ -11,28 +11,22 @@ import { Roller } from "react-awesome-spinners";
 import BookFormTemplate from "./formTemplate/formTemplate";
 
 const AddBook = (props) => {
-  if (!props.token) props.history.push("/login")
-  const authors = [];
+  if (!props.token) props.history.push("/login");
   const [bookForm, setBookForm] = useState();
   const [isFormSubmitted, setFormSubmitted] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
-  props.authors.map((author) =>
-      authors.push({
-        value: author.authorExternalId,
-        displayValue: author.firstName + " " + author.lastName,
-      })
-  );
-
   useEffect(() => {
-    setBookForm(BookFormTemplate({authors: authors}))
+    setBookForm(
+      BookFormTemplate({ authors: props.authors, categories: props.categories })
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isFormSubmitted && !props.loading) {
     setTimeout(() => {
-      props.history.push("/books/ranking")
-    }, 2000)
+      props.history.push("/books/ranking");
+    }, 1500);
   }
 
   const submitted = (bookData) => {
@@ -67,6 +61,7 @@ const mapStateToProps = (state) => {
   return {
     token: state.auth.token,
     loading: state.book.loading,
+    categories: state.category.categories,
     authors: state.author.authors,
   };
 };

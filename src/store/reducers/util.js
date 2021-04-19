@@ -3,6 +3,8 @@ import { updateObject } from '../../shared/utils';
 
 const initialState = {
     username: null,
+    userId: null,
+    userDetails: null,
     error: null,
     loading: false
 };
@@ -12,8 +14,11 @@ const getUserInfoStart = ( state, action ) => {
 };
 
 const getUserInfoSuccess = (state, action) => {
+    console.log(action)
     return updateObject( state, {
         username: action.idToken.data.username,
+        userId: action.idToken.data.userExternalId,
+        userDetails: action.idToken.data,
         error: null,
         loading: false
     } );

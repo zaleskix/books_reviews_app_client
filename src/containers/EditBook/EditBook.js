@@ -36,7 +36,7 @@ const EditBook = (props) => {
   if (isFormSubmitted && !props.loading) {
     setTimeout(() => {
       props.history.push("/books/" + bookId)
-    }, 2000)
+    }, 1500)
   }
 
   useEffect(() => {

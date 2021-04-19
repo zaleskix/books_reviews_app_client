@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 
 import styles from "./BookDetails.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
@@ -17,11 +17,21 @@ const BookDetails = (props) => {
   const { onGetBookDetails } = props;
   const location = useLocation();
   let bookId = location.pathname.split("/").pop();
+  const [addedToFavourites, setAddedToFavourites] = useState(false);
 
   useEffect(() => {
     onGetBookDetails(bookId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onGetBookDetails]);
+
+  useEffect(() => {
+    if (props.favourites) {
+      props.favourites.map((fav) => {
+        if (fav.bookExternalId && fav.bookExternalId === bookId)
+          setAddedToFavourites(true);
+      });
+    }
+  }, []);
 
   let reviews = [];
   if (props.bookDetails.reviews) {
@@ -59,6 +69,27 @@ const BookDetails = (props) => {
     text: "Usuń książkę",
     clicked: () => {
       props.onBookRemove(bookId);
+    },
+  };
+  const addToFavsButton = {
+    text: "Dodaj do ulubionych",
+    clicked: () => {
+      props.onAddFavourite(props.userId, bookId);
+      setTimeout(() => {
+        window.location.reload();
+        onGetBookDetails(bookId)
+      }, 1000);
+    },
+  };
+
+  const removeFromFavsButton = {
+    text: "Usuń do ulubionych",
+    clicked: () => {
+      props.onRemoveFavourite(props.userId, bookId);
+      setTimeout(() => {
+        window.location.reload();
+        onGetBookDetails(bookId)
+      }, 1000);
     },
   };
 
@@ -131,6 +162,9 @@ const BookDetails = (props) => {
             submitReview={submitReview}
             onUpvote={onUpvote}
             onDownvote={onDownvote}
+            favsButton={
+              addedToFavourites ? removeFromFavsButton : addToFavsButton
+            }
             disabled={
               props.ratedBooks && props.ratedBooks.includes(bookId)
             }
@@ -151,6 +185,8 @@ const mapStateToProps = (state) => {
     username: state.util.username,
     actionFinished: state.book.actionFinished,
     ratedBooks: state.book.ratedBooks,
+    favourites: state.util.userDetails.favouriteBooks,
+    userId: state.util.userId,
   };
 };
 
@@ -165,7 +201,11 @@ const mapDispatchToProps = (dispatch) => {
     onUpvoteBook: (bookId) =>
         dispatch(actions.upvoteBook(bookId)),
     onDownvoteBook: (bookId) =>
-        dispatch(actions.downvoteBook(bookId))
+        dispatch(actions.downvoteBook(bookId)),
+    onAddFavourite: (userId, favId) =>
+        dispatch(actions.addFavToUser(userId, favId)),
+    onRemoveFavourite: (userId, favId) =>
+        dispatch(actions.removeFavToUser(userId, favId)),
   };
 };
 

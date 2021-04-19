@@ -16,11 +16,12 @@ axiosInstance.interceptors.response.use(
   (error) => {
     let currentToken = localStorage.getItem("token");
 
-    if (!error || !error.response.config.__isRetryRequest || (!error.toString().includes("401") && !error.toString().includes("403"))) {
+    if (!error || error.response.config.__isRetryRequest || (!error.toString().includes("401") && !error.toString().includes("403"))) {
       return Promise.reject(error);
     }
 
-    if (currentToken === "null" || error.toString().includes("403")) {
+    if (currentToken === "null" || error.toString().includes("403")
+        || (error.toString().includes("401") && error.response.config.url.includes("token/refresh"))) {
       window.location.href = "/login";
     }
 

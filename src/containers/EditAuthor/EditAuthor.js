@@ -26,7 +26,7 @@ const EditAuthor = (props) => {
   if (isFormSubmitted && !props.loading) {
     setTimeout(() => {
       props.history.push("/authors/" + authorId)
-    }, 2000)
+    }, 1500)
   }
 
   let form = (

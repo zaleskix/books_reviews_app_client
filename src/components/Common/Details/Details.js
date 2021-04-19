@@ -20,6 +20,7 @@ const details = (props) => {
       ))
     : null;
 
+
   return (
     <div className={styles.Details}>
       <div className={styles.Content}>
@@ -28,7 +29,7 @@ const details = (props) => {
           <div className={styles.Info}>
             <div className={styles.InfoItems}>{infoItems}</div>
             <div className={styles.Buttons}>
-              <TextButton text={"Dodaj do ulubionych"} isPrimary />
+              {props.favsButton ? <TextButton text={props.favsButton.text} isPrimary clicked={props.favsButton.clicked}/> : null}
               <TextButton
                 text={props.editButton.text}
                 clicked={props.editButton.clicked}
@@ -62,7 +63,7 @@ const details = (props) => {
       {props.evaluation ? (
         <div className={styles.Reviews}>
           <ReviewInput submitReview={props.submitReview} />
-          <Reviews reviews={props.evaluation.reviews} />
+          <Reviews reviews={props.evaluation.reviews}/>
         </div>
       ) : null}
     </div>

@@ -28,7 +28,7 @@ const AddCategory = (props) => {
   if (isFormSubmitted && !props.loading) {
     setTimeout(() => {
       props.history.push("/categories")
-    }, 2000)
+    }, 1500)
   }
 
   return (

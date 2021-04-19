@@ -26,13 +26,6 @@ const profileNavigationItems = (props) => {
          forAuthenticatedUsers: true,
       },
       {
-         name: "Wiadomości",
-         imgActive: MailsActive,
-         imgInactive: MailsInactive,
-         link: "/mails",
-         forAuthenticatedUsers: true,
-      },
-      {
          name: "Login",
          imgActive: SignInActive,
          imgInactive: SignInInactive,
@@ -67,7 +60,9 @@ const profileNavigationItems = (props) => {
       <div className={styles.ProfileMenu}>
          {!props.isAuth ? null : (
             <div className={props.isMenuExpanded ? styles.ProfilePictureExpanded : styles.ProfilePictureHided}>
-               <ProfileNavigationItem imgAlt={"Profile"} imgSrc={Profile} name={"Profile"} link="/profile" exact />
+               {props.withAvatar ?
+                   <ProfileNavigationItem imgAlt={"Profile"} imgSrc={`data:image/png;base64,${props.profilePicture}`} name={"Profile"} link="/profile" exact />
+                   : <ProfileNavigationItem imgAlt={"Profile"} imgSrc={props.profilePicture} name={"Profile"} link="/profile" exact />}
             </div>
          )}
          {props.isMenuExpanded ? <div className={styles.ProfileExpandMenu}>{profileNavigationItems}</div> : null}

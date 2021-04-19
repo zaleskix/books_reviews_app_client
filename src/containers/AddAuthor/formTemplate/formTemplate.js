@@ -1,4 +1,13 @@
-const formTemplate = () => {
+const formTemplate = (props) => {
+  let categories = []
+  if (props.categories) {
+    props.categories.map(category => {
+      categories.push({
+        value: category.name,
+        displayValue: category.name
+      })
+    })
+  }
   return {
     photo: {
       type: "photo",
@@ -25,10 +34,7 @@ const formTemplate = () => {
     categories: {
       type: "multiselect",
       name: "Kategorie",
-      options: [
-        { value: "fantasy", displayValue: "Fantastyka" },
-        { value: "scifi", displayValue: "Science-Fiction" },
-      ],
+      options: categories,
       value: [],
       validation: {},
       valid: true,

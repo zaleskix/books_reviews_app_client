@@ -1,9 +1,10 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation, withRouter } from "react-router-dom";
 
 import styles from "./Profile.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import TextButton from "../../components/UI/Buttons/TextButton/TextButton";
+import FullSizePhoto from "../../components/Common/FullSizePhoto/FullSizePhoto";
 
 import UserProfilePicture from "../../assets/photos/users/user1.jpg";
 import Book1 from "../../assets/photos/books/book1.png";
@@ -11,59 +12,105 @@ import Book2 from "../../assets/photos/books/book2.png";
 import Book3 from "../../assets/photos/books/book3.png";
 import Book4 from "../../assets/photos/books/book4.png";
 import Book5 from "../../assets/photos/books/book5.png";
+import { connect } from "react-redux";
+import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
+import axiosInstance from "../../axios";
+import { Roller } from "react-awesome-spinners";
+import * as actions from "../../store/actions";
 
-const profile = (props) => {
-   if (!props.token) props.history.push("/login")
-   const user = {
-      id: 1,
-      name: "Ania Kowalska",
-      picture: UserProfilePicture,
-      aboutMe: "American author of horror, supernatural fiction, suspense, crime, science-fiction, and fantasy novels.",
-      favourites: [
-         {identifier: "book-1", title: "Doktor Sen", author: "Stephen King", image: Book1 },
-         {identifier: "book-5",  title: "Tatuażysta z Auschwitz", author: "Heather Morris", image: Book2 },
-         {identifier: "book-4",  title: "O północy w czarnobylu", author: "Adam Higginbottam", image: Book3 },
-         {identifier: "book-3",  title: "Instytut", author: "Stephen King", image: Book4 },
-         {identifier: "book-2",  title: "Precedens", author: "Remigiusz Mróz", image: Book5 },
-      ],
-   };
+const Profile = (props) => {
+  if (!props.token) props.history.push("/login");
+  const { onGetUserDetails } = props;
+  const location = useLocation();
+  let userId = location.pathname.split("/").pop();
 
-   const bookClicked = (identifier) => {
-      props.history.push("/books/" + identifier);
-   };
+  useEffect(() => {
+    onGetUserDetails(userId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onGetUserDetails]);
 
-   let favourites = user.favourites.map((book) => (
-      <div className={styles.FavouriteBook} key={book.title} onClick={() => bookClicked(book.identifier)}>
-         <img alt={book.title} src={book.image} />
-         <div className={styles.Title}>{book.title}</div>
-         <div className={styles.Author}>{book.author}</div>
+  let userProfile = (
+    <React.Fragment>
+      <PageHeader caption={""} />{" "}
+      <div className={styles.PageContent}>
+        <Roller />
       </div>
-   ));
-
-   return (
-      <div className={styles.Profile}>
-         <PageHeader caption={user.name} />
-         <div className={styles.PageContent}>
-            <div className={styles.ProfilePictureSection}>
-               <div className={styles.ProfilePicture}>
-                  <img alt={user.id} src={user.picture} />
-               </div>
-               <div className={styles.Buttons}>
-                  <TextButton text={"Zaproś do znajomych"} isPrimary />
-                  <TextButton text={"Wyślij wiadomość"} />
-               </div>
-            </div>
-            <div className={styles.AboutMeSection}>
-               <div className={styles.AboutMeCaption}>About me</div>
-               <div className={styles.AboutMeContent}>{user.aboutMe}</div>
-            </div>
-         </div>
-         <div className={styles.Favourites}>
-            <div className={styles.FavouritesBookCaption}>Favourites books</div>
-            <div className={styles.FavouritesBooks}>{favourites}</div>
-         </div>
+    </React.Fragment>
+  );
+  if (!props.loading && props.actionFinished) {
+    let favourites = [];
+    if (props.favourites) {
+      props.favourites.map((fav) => {
+        if (fav.bookExternalId) {
+          favourites.push({
+            identifier: fav.bookExternalId,
+            title: fav.title,
+            cover: fav.cover,
+          });
+        }
+      });
+    }
+    let favs = favourites.map((fav) => (
+      <div
+        className={styles.FavouriteBook}
+        key={fav.title}
+        onClick={() => bookClicked(fav.identifier)}
+      >
+        <img alt={fav.title} src={`data:image/png;base64,${fav.cover}`} />
+        <div className={styles.Title}>{fav.title}</div>
       </div>
-   );
+    ));
+    userProfile = (
+      <React.Fragment>
+        <div className={styles.PageContent}>
+          <div className={styles.ProfilePictureSection}>
+            <div className={styles.FullSizePhoto}>
+              <img alt={props.userDetails.userExternalId} src={`data:image/jpg;base64,${props.userDetails.avatar}`} />
+            </div>
+          </div>
+          <div className={styles.AboutMeSection}>
+            <div className={styles.AboutMeCaption}>About me</div>
+            <div className={styles.AboutMeContent}>
+              {props.userDetails.aboutMe}
+            </div>
+          </div>
+        </div>
+        <div className={styles.Favourites}>
+          <div className={styles.FavouritesBookCaption}>Favourites books</div>
+          <div className={styles.FavouritesBooks}>{favs}</div>
+        </div>
+      </React.Fragment>
+    );
+  }
+  const bookClicked = (identifier) => {
+    props.history.push("/books/" + identifier);
+  };
+
+  return (
+    <div className={styles.Profile}>
+      <PageHeader caption={props.userDetails.username} />
+      {userProfile}
+    </div>
+  );
 };
 
-export default withRouter(profile);
+const mapStateToProps = (state) => {
+  return {
+    token: state.auth.token,
+    loading: state.user.loading,
+    userDetails: state.user.userDetails,
+    actionFinished: state.user.actionFinished,
+    favourites: state.user.userDetails.favouriteBooks,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onGetUserDetails: (userId) => dispatch(actions.getUserDetails(userId)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ErrorHandler(withRouter(Profile), axiosInstance));

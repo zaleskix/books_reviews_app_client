@@ -17,7 +17,7 @@ const AddAuthor = (props) => {
   const [isFormSubmitted, setFormSubmitted] = useState(false)
 
   useEffect(() => {
-    setAuthorForm(AuthorFormTemplate)
+    setAuthorForm(AuthorFormTemplate({categories: props.categories}))
   }, []);
 
   const submitted = (authorData) => {
@@ -28,7 +28,7 @@ const AddAuthor = (props) => {
   if (isFormSubmitted && !props.loading) {
     setTimeout(() => {
       props.history.push("/authors/ranking")
-    }, 2000)
+    }, 1500)
   }
 
   return (
@@ -56,6 +56,7 @@ const mapStateToProps = (state) => {
   return {
     token: state.auth.token,
     loading: state.author.loading,
+    categories: state.category.categories,
     actionFinished: state.author.actionFinished,
   };
 };

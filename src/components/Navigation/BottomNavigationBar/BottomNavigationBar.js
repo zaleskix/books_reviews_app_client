@@ -23,7 +23,6 @@ const bottomNavigationBar = (props) => {
             name: "Settings",
             link: "/settings",
         },
-        {imgAlt: "Mails", imgSrc: Mails, name: "Mails", link: "/mails"},
         {
             imgAlt: "Favourites",
             imgSrc: Favourites,

@@ -7,6 +7,7 @@ import bookReducer from "./reducers/book";
 import categoryReducer from "./reducers/category";
 import reviewReducer from "./reducers/review";
 import utilReducer from "./reducers/util";
+import userReducer from "./reducers/user";
 import authReducer from "./reducers/auth";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
@@ -17,6 +18,7 @@ const storeConfig = () => {
     book: bookReducer,
     category: categoryReducer,
     review: reviewReducer,
+    user: userReducer,
     util: utilReducer,
     auth: authReducer,
   });

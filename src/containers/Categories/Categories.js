@@ -12,7 +12,6 @@ import axiosInstance from "../../axios";
 const Categories = (props) => {
   if (!props.token) props.history.push("/login")
   const { onCategoriesGet } = props;
-  const categoriesData = [];
 
   useEffect(() => {
     let searchCriteria = {
@@ -22,16 +21,8 @@ const Categories = (props) => {
     onCategoriesGet(searchCriteria);
   }, [onCategoriesGet]);
 
-  // eslint-disable-next-line array-callback-return
-  props.categories.map((category) => {
-    categoriesData.push({
-      identifier: category.categoryExternalId,
-      name: category.name,
-      image: category.image,
-    });
-  });
 
-  let categories = categoriesData.map((category) => (
+  let categories = props.categories.map((category) => (
     <Category
       key={category.name}
       category={category}

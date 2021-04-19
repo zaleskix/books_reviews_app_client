@@ -6,6 +6,7 @@ import * as actions from "../../../../store/actions";
 import { connect } from "react-redux";
 import ErrorHandler from "../../../../hoc/ErrorHandler/ErrorHandler";
 import axiosInstance from "../../../../axios";
+import { withRouter } from "react-router-dom";
 
 const Review = (props) => {
   const onUpvote = () => {
@@ -72,4 +73,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(Review, axiosInstance));
+)(ErrorHandler(withRouter(Review), axiosInstance));

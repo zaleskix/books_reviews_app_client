@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./AuthorDetails.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
@@ -16,12 +16,21 @@ const AuthorDetails = (props) => {
   const { onGetAuthorDetails } = props;
   const location = useLocation();
   let authorId = location.pathname.split("/").pop();
+  const [addedToFavourites, setAddedToFavourites] = useState(false);
 
   useEffect(() => {
     onGetAuthorDetails(authorId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onGetAuthorDetails]);
 
+  useEffect(() => {
+    if (props.favourites) {
+      props.favourites.map((fav) => {
+        if (fav.authorExternalId && fav.authorExternalId === authorId)
+          setAddedToFavourites(true);
+      });
+    }
+  }, []);
   let reviews = [];
   if (props.authorDetails.reviews) {
     // eslint-disable-next-line array-callback-return
@@ -46,6 +55,26 @@ const AuthorDetails = (props) => {
     clicked: () => props.history.push("/authors/" + authorId + "/edit"),
   };
 
+  const addToFavsButton = {
+    text: "Dodaj do ulubionych",
+    clicked: () => {
+      props.onAddFavourite(props.userId, authorId);
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    },
+  };
+
+  const removeFromFavsButton = {
+    text: "Usuń do ulubionych",
+    clicked: () => {
+      props.onRemoveFavourite(props.userId, authorId);
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    },
+  };
+
   const removeButton = {
     text: "Usuń autora",
     clicked: () => {
@@ -68,7 +97,7 @@ const AuthorDetails = (props) => {
       authorId: authorId,
       content: reviewContent,
       reviewAuthorUsername: props.username,
-      score: 0
+      score: 0,
     };
 
     props.onAddReview(review);
@@ -76,13 +105,11 @@ const AuthorDetails = (props) => {
 
   const onUpvote = () => {
     props.onUpvoteAuthor(authorId);
-  }
+  };
 
   const onDownvote = () => {
     props.onDownvoteAuthor(authorId);
-  }
-
-
+  };
 
   if (!props.loading && props.actionFinished) {
     let authorEvaluation = {
@@ -133,6 +160,9 @@ const AuthorDetails = (props) => {
             submitReview={submitReview}
             onUpvote={onUpvote}
             onDownvote={onDownvote}
+            favsButton={
+              addedToFavourites ? removeFromFavsButton : addToFavsButton
+            }
             disabled={
               props.ratedAuthors && props.ratedAuthors.includes(authorId)
             }
@@ -150,8 +180,10 @@ const mapStateToProps = (state) => {
     token: state.auth.token,
     loading: state.author.loading,
     authorDetails: state.author.authorDetails,
+    userId: state.util.userId,
     reviews: state.review.reviews,
     username: state.util.username,
+    favourites: state.util.userDetails.favouriteAuthors,
     actionFinished: state.author.actionFinished,
     ratedAuthors: state.author.ratedAuthors,
   };
@@ -161,15 +193,14 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onGetAuthorDetails: (authorId) =>
       dispatch(actions.getAuthorDetails(authorId)),
-    onAuthorRemove: (authorId) =>
-      dispatch(actions.removeAuthor(authorId)),
-    onAddReview: (reviewData) =>
-      dispatch(actions.addReview(reviewData)),
-    onUpvoteAuthor: (authorId) =>
-      dispatch(actions.upvoteAuthor(authorId)),
-    onDownvoteAuthor: (authorId) =>
-      dispatch(actions.downvoteAuthor(authorId))
-
+    onAuthorRemove: (authorId) => dispatch(actions.removeAuthor(authorId)),
+    onAddReview: (reviewData) => dispatch(actions.addReview(reviewData)),
+    onUpvoteAuthor: (authorId) => dispatch(actions.upvoteAuthor(authorId)),
+    onDownvoteAuthor: (authorId) => dispatch(actions.downvoteAuthor(authorId)),
+    onAddFavourite: (userId, favId) =>
+      dispatch(actions.addFavToUser(userId, favId)),
+    onRemoveFavourite: (userId, favId) =>
+      dispatch(actions.removeFavToUser(userId, favId)),
   };
 };
 

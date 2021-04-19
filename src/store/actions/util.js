@@ -27,7 +27,11 @@ export const getUserInfo = () => {
     dispatch(getUserInfoStart());
     let url = "http://localhost:6080/me";
     axiosInstance
-      .get(url)
+      .get(url, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
         dispatch(getUserInfoSuccess(response));
       })

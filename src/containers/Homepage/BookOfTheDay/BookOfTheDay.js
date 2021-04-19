@@ -14,19 +14,11 @@ const bookOfTheDay = (props) => {
 
    return (
       <div className={styles.BookOfTheDay}>
-         <div className={styles.Title}>Doktor Sen</div>
-         <div className={styles.BookContent}  onClick={() => bookClicked(props.book.identifier)}>
-            <div className={styles.BookPrimaryInfo}>
-               <FullSizePhoto name={props.book.name} image={props.book.image} />
-               <Score rating={props.book.rating} numberOfRatings={props.book.numberOfRatings} />
-            </div>
-            <div className={styles.BookAdditionalInfo}>
-               <Description caption={"Opis:"} content={props.book.description} />
-               <div className={styles.Buttons}>
-                  <TextButton text={"Dodaj do ulubionych"} isPrimary />
-                  <TextButton text={"Udostepnij"} />
+         <div className={styles.Title}>{props.book.title}</div>
+         <div className={styles.BookContent}  onClick={() => bookClicked(props.book.bookExternalId)}>
+               <div className={styles.FullSizePhoto}>
+                  <img alt={props.book.title} src={`data:image/jpg;base64,${props.book.cover}`} />
                </div>
-            </div>
          </div>
       </div>
    );

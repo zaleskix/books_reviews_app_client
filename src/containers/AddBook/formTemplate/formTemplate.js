@@ -1,4 +1,26 @@
 const formTemplate = (props) => {
+
+  let categories = []
+  let authors = []
+
+  if (props.authors) {
+    props.authors.map((author) =>
+        authors.push({
+          value: author.authorExternalId,
+          displayValue: author.firstName + " " + author.lastName,
+        })
+    );
+  }
+
+  if (props.categories) {
+    props.categories.map(category => {
+      categories.push({
+        value: category.name,
+        displayValue: category.name
+      })
+    })
+  }
+
   return {
     cover: {
       type: "photo",
@@ -17,7 +39,7 @@ const formTemplate = (props) => {
     authorsIds: {
       type: "multiselect",
       name: "Autorzy",
-      options: props.authors,
+      options: authors,
       value: [],
       validation: {},
       valid: true,
@@ -25,10 +47,7 @@ const formTemplate = (props) => {
     categories: {
       type: "multiselect",
       name: "Kategorie",
-      options: [
-        { value: "fantasy", displayValue: "Fantastyka" },
-        { value: "scifi", displayValue: "Science-Fiction" },
-      ],
+      options: categories,
       value: [],
       validation: {},
       valid: true,

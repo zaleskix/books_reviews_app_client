@@ -35,21 +35,21 @@ const EditCategory = (props) => {
   if (isFormSubmitted && !props.loading) {
     setTimeout(() => {
       props.history.push("/categories/" + categoryId)
-    }, 2000)
+    }, 1500)
   }
 
-  if (!props.loading) {
-    const submitted = (categoryData) => {
-      const changedData = categoryData;
-      for (let key in categoryData) {
-        if (!categoryForm[key].touched) {
-          delete changedData[key];
-        }
+  const submitted = (categoryData) => {
+    const changedData = categoryData;
+    for (let key in categoryData) {
+      if (!categoryForm[key].touched) {
+        delete changedData[key];
       }
-      props.onEditCategory(categoryId, categoryData);
-      setFormSubmitted(true);
-    };
+    }
+    props.onEditCategory(categoryId, categoryData);
+    setFormSubmitted(true);
+  };
 
+  if (!props.loading) {
     form = (
       <React.Fragment>
         <PageHeader caption={"Edytuj kategorie"} />
