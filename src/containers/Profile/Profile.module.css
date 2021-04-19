@@ -49,9 +49,9 @@
     height: 100%;
     margin-top: 30px;
     width: 80%;
-    background-color: white;
-    border-radius: 15px;
-    border: 1px solid #24282e;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .AboutMeCaption {
@@ -95,10 +95,27 @@
     text-align: left;
     width: 80%;
     font-weight: 900;
+    margin-top: 60px;
 }
+
+.FullSizePhoto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.FullSizePhoto img {
+    max-height: 240px;
+    max-width: 180px;
+    border-radius: 25px;
+}
+
 
 .FavouriteBook {
     width: 100%;
+    max-width: 240px;
     height: 100%;
     display: flex;
     margin: 0 15px;

@@ -15,15 +15,35 @@ import Fantastyka from "../../assets/photos/categories/fantasy.png";
 import ScienceFiction from "../../assets/photos/categories/sci_fi.png";
 import LiteraturaPiekna from "../../assets/photos/categories/lit_piekna.png";
 import DoktorSen from "../../assets/photos/books/book1.png";
+import * as actions from "../../store/actions";
+import {connect} from "react-redux";
+import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
+import axiosInstance from "../../axios";
 
-const homepage = (props) => {
-    const authors = [
-        {identifier: "author-82318213-2138asd-asd123", name: "Stephen King", ranking: 1, image: SKing},
-        {identifier: "author-02190jwd-dasj12k-mnn11", name: "J.K. Rowling", ranking: 2, image: JKRowling},
-        {identifier: "author-jiqew9-pkdaposa-nqewoj", name: "J. R. R. Tolkien", ranking: 3, image: JRRTolkien},
-        {identifier: "author-w0qe-120939-21o3jb1b", name: "Remigiusz Mróz", ranking: 4, image: RMroz},
-        {identifier: "author-da8a8s9d-1203j-zcpoczpo", name: "Andrzej Sapkowski", ranking: 5, image: ASapkowski},
-    ];
+const Homepage = (props) => {
+    if (!props.token) props.history.push("/login")
+    const authors = [];
+    let i = 0;
+    if (props.authors) {
+        for (i = 0; i < 5; i++) {
+            let author = props.authors[i];
+            if (!author) break;
+            authors.push({
+                identifier: author.authorExternalId,
+                ranking: i + 1,
+                name: author.firstName + " " + author.lastName,
+                image: author.photo,
+            })
+        }
+    }
+    //     [
+    //
+    //     {identifier: "author-82318213-2138asd-asd123", name: "Stephen King", ranking: 1, image: SKing},
+    //     {identifier: "author-02190jwd-dasj12k-mnn11", name: "J.K. Rowling", ranking: 2, image: JKRowling},
+    //     {identifier: "author-jiqew9-pkdaposa-nqewoj", name: "J. R. R. Tolkien", ranking: 3, image: JRRTolkien},
+    //     {identifier: "author-w0qe-120939-21o3jb1b", name: "Remigiusz Mróz", ranking: 4, image: RMroz},
+    //     {identifier: "author-da8a8s9d-1203j-zcpoczpo", name: "Andrzej Sapkowski", ranking: 5, image: ASapkowski},
+    // ];
 
     const categories = [
         {identifier: "category-123asd123-0132i0jeqw-312-sad", name: "Fantastyka", image: Fantastyka},
@@ -31,26 +51,15 @@ const homepage = (props) => {
         {identifier: "category-okdoak[s-weiq-iqw-0=eqwi-sad", name: "Literatura Piękna", image: LiteraturaPiekna},
     ];
 
-    const bookOfTheDay = {
-        identifier: "book-123-123-123-123-12",
-        name: "Doktor Sen",
-        image: DoktorSen,
-        rating: "7.5",
-        numberOfRatings: "12 820",
-        description:
-            "Kontynuacja bestsellerowego „Lśnienia”! Pamiętacie małego chłopca obdarzonego niezwykłą mocą? Chłopca nękanego przez duchy? Chłopca uwięzionego w odludnym hotelu wraz z opętanym ojcem? Możecie już poznać jego dalsze losy!",
-    };
-
-    const bookClicked = (bookId) => {
-        props.history.push("/books/" + bookId);
-     };
+    console.log(props.categories)
+    const book = props.books[Math.floor(Math.random() * props.books.length)];
 
     return (
         <div className={styles.Homepage}>
             <div className={styles.HomepageTop}>
                 <div className={styles.BookOfTheDay}>
                     <div className={styles.Caption}>Książka dnia</div>
-                    <BookOfTheDay book={bookOfTheDay}/>
+                    <BookOfTheDay book={book}/>
                 </div>
                 <div className={styles.VerticalSplitter}/>
                 <div className={styles.TopAuthors}>
@@ -60,10 +69,30 @@ const homepage = (props) => {
             </div>
             <div className={styles.DiscoverCategories}>
                 <div className={styles.Caption}>{`Odkryj \n kategorie`}</div>
-                <DiscoverCategories categories={categories}/>
+                <DiscoverCategories categories={props.categories ? props.categories.slice(0,3): null}/>
             </div>
         </div>
     );
 };
 
-export default homepage;
+
+const mapStateToProps = (state) => {
+    return {
+        token: state.auth.token,
+        authors: state.author.authors,
+        books: state.book.books,
+        categories: state.category.categories,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onEditCategory: (categoryId, categoryData) =>
+            dispatch(actions.editCategory(categoryId, categoryData)),
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ErrorHandler(Homepage, axiosInstance));

@@ -1,81 +1,74 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import { connect } from "react-redux";
+import axiosInstance from "../../axios";
+import { Roller } from "react-awesome-spinners";
 
 import styles from "./AddAuthor.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
-import From from "../../components/UI/Form/Form"
+import From from "../../components/UI/Form/Form";
+import * as actions from "../../store/actions/index";
+import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
+import AuthorFormTemplate from "./formTemplate/formTemplate";
 
 const AddAuthor = (props) => {
-    const [authorForm, setAuthorForm] = useState({
-        image: {
-            type: "file",
-            placeholder: "Zdjęcie autora",
-            value: "",
-            validation: {},
-            valid: true,
-        },
-        firstName: {
-            type: "input",
-            name: "Imię",
-            placeholder: "Stephen",
-            value: "",
-            validation: {required: true},
-            valid: false,
-            touched: false,
-        },
-        lastName: {
-            type: "input",
-            name: "Nazwisko",
-            placeholder: "King",
-            value: "",
-            validation: {required: true},
-            valid: false,
-            touched: false,
-        },
-        categories: {
-            type: "select",
-            name: "Kategorie",
-            options: [
-                {value: "fantasy", displayValue: "Fantastyka"},
-                {value: "scifi", displayValue: "Science-Fiction"},
-            ],
-            value: "fantasy",
-            validation: {},
-            valid: true,
-        },
-        homepage: {
-            type: "input",
-            name: "Strona autora",
-            placeholder: "https://www.stephenking.com",
-            value: "",
-            validation: {},
-            valid: true,
-        },
-        biography: {
-            type: "textarea",
-            name: "Biografia",
-            placeholder:
-                "Stephen Edwin King – amerykański pisarz, autor głównie literatury grozy. W przeszłości wydawał książki pod pseudonimem Richard Bachman, raz jako John Swithen. Jego książki rozeszły się w nakładzie przekraczającym 350 milionów egzemplarzy, co czyni go jednym z najbardziej poczytnych pisarzy na świecie. ",
-            value: "",
-            validation: {},
-            valid: true,
-        },
-    });
+  if (!props.token) props.history.push("/login")
+  const [authorForm, setAuthorForm] = useState();
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [isFormSubmitted, setFormSubmitted] = useState(false)
 
-    const [isFormValid, setIsFormValid] = useState(false);
+  useEffect(() => {
+    setAuthorForm(AuthorFormTemplate({categories: props.categories}))
+  }, []);
 
-    return (
-        <div className={styles.AddAuthor}>
-            <PageHeader caption={"Dodaj autora"}/>
-            <div className={styles.PageContent}>
-                <From
-                    formTemplate={authorForm}
-                    setFormTemplate={setAuthorForm}
-                    isFormValid={isFormValid}
-                    setIsFormValid={setIsFormValid}
-                />
-            </div>
+  const submitted = (authorData) => {
+    props.onAuthorAdd(authorData);
+    setFormSubmitted(true)
+  };
+
+  if (isFormSubmitted && !props.loading) {
+    setTimeout(() => {
+      props.history.push("/authors/ranking")
+    }, 1500)
+  }
+
+  return (
+    <div className={styles.AddAuthor}>
+      <PageHeader caption={"Dodaj autora"} />
+      {isFormSubmitted && !props.loading ? <div className={styles.Success}>Autor został pomyślnie dodany</div> : null}
+      {props.loading ? (
+        <Roller />
+      ) : (
+        <div className={styles.PageContent}>
+          <From
+            submited={submitted}
+            formTemplate={authorForm}
+            setFormTemplate={setAuthorForm}
+            isFormValid={isFormValid}
+            setIsFormValid={setIsFormValid}
+          />
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
-export default AddAuthor;
+const mapStateToProps = (state) => {
+  return {
+    token: state.auth.token,
+    loading: state.author.loading,
+    categories: state.category.categories,
+    actionFinished: state.author.actionFinished,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuthorAdd: (authorData) =>
+      dispatch(actions.addAuthor(authorData)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ErrorHandler(AddAuthor, axiosInstance));

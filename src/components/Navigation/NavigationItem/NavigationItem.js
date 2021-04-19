@@ -14,7 +14,7 @@ const navigationItem = (props) => {
             to={props.link}
             exact={props.exact}
             className={classes.join(" ")}
-            activeClassName={styles.Active}
+            activeClassName={props.withoutActiveHighlight ? null : styles.Active}
         >
             <div className={styles.NavItemImage}>
                 <img alt={props.imgAlt} src={props.imgSrc}/>

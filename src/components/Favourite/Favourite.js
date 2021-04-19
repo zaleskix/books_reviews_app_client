@@ -15,27 +15,11 @@ const Favourite = (props) => {
       setExpandMenu(!isMenuExpanded);
    };
 
-   const showBookDetails = (identifier) => {
-      if (identifier.match("^book")) {
-         props.history.push("/books/" + identifier);
-      } else {
-         props.history.push("/authors/" + identifier);
-      }
-   };
-
-   const deleteFromFavourites = () => {
-      console.log("Delete from favourites");
-   };
-
-   const shareBook = () => {
-      console.log("Share book");
-   };
-
    return (
       <div className={styles.Favourite}>
          <div className={styles.MainInfo} onClick={expandMenu}>
             <div className={styles.Image}>
-               <img alt={props.caption} src={props.image} />
+               <img alt={props.caption} src={`data:image/png;base64,${props.image}`}/>
                <div className={styles.ImageFade} />
             </div>
             <div className={styles.Captions}>
@@ -52,14 +36,11 @@ const Favourite = (props) => {
                <div className={styles.Score}>
                   <Score rating={props.rating} numberOfRatings={props.numberOfRatings} />
                </div>
-               <div className={styles.ShowDetails} onClick={() => showBookDetails(props.identifier)}>
+               <div className={styles.ShowDetails} onClick={() => props.showDetails(props.identifier)}>
                   Zobacz książkę
                </div>
-               <div className={styles.Delete} onClick={deleteFromFavourites}>
+               <div className={styles.Delete} onClick={() => props.revmoeFromFavourites(props.identifier)}>
                   Usuń z ulubionych
-               </div>
-               <div className={styles.Share} onClick={shareBook}>
-                  Udostępnij
                </div>
             </div>
          </ExpandedDiv>

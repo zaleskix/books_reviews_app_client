@@ -1,78 +1,111 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styles from "./Ranking.module.css";
 
 import Ranking from "../../components/Ranking/Ranking";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 
-import DoktorSen from "../../assets/photos/books/book1.png";
-import Tatuazysta from "../../assets/photos/books/book2.png";
-import OPolnocy from "../../assets/photos/books/book3.png";
-import Instytut from "../../assets/photos/books/book4.png";
-import Precedens from "../../assets/photos/books/book5.png";
-import CzerwonaKrolowa from "../../assets/photos/books/book6.png";
+import * as actions from "../../store/actions";
+import { connect } from "react-redux";
+import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
+import axiosInstance from "../../axios";
 
-import StephenKing from "../../assets/photos/authors/author1.png";
-import JKRowling from "../../assets/photos/authors/author2.png";
-import JRRTolkien from "../../assets/photos/authors/author3.png";
-import RMroz from "../../assets/photos/authors/author4.png";
-import ASpakowski from "../../assets/photos/authors/author5.png";
-import OTokarczuk from "../../assets/photos/authors/author6.png";
+const RankingPage = (props) => {
+  if (!props.token) props.history.push("/login")
+  let ranking = [];
 
-const ranking = (props) => {
-   const books = [
-      {identifier: "book-1", ranking: 1, name: "Doktor Sen", image: DoktorSen },
-      {identifier: "book-2",  ranking: 2, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
-      {identifier: "book-3",  ranking: 3, name: "O pólnocy w Czarnobylu", image: OPolnocy },
-      {identifier: "book-4",  ranking: 4, name: "Instytut", image: Instytut },
-      {identifier: "book-5",  ranking: 5, name: "Precedens", image: Precedens },
-      {identifier: "book-6",  ranking: 6, name: "Czerwona Królowa", image: CzerwonaKrolowa },
-      {identifier: "book-7",  ranking: 7, name: "Tatuażysta z Auschwitz", image: Tatuazysta },
-      {identifier: "book-8",  ranking: 8, name: "Instytut", image: Instytut },
-   ];
+  useEffect(() => {
+    let searchCriteria = {
+      "sort.sortBy": "votes",
+      "sort.sortDirection": "ASC",
+    };
 
-   const authors = [
-      {identifier: "author-1",  ranking: 1, name: "Stephen King", image: StephenKing },
-      {identifier: "author-2",   ranking: 2, name: "J.K. Rowling", image: JKRowling },
-      {identifier: "author-3",   ranking: 3, name: "J.R.R. Tolkien", image: JRRTolkien },
-      {identifier: "author-4",   ranking: 4, name: "Remigiusz Mróz", image: RMroz },
-      {identifier: "author-5",   ranking: 5, name: "Andrzej Sapkowski", image: ASpakowski },
-      {identifier: "author-6",   ranking: 6, name: "Olga Tokarczuk", image: OTokarczuk },
-      {identifier: "author-7",   ranking: 7, name: "J.R.R. Tolkien", image: JRRTolkien },
-      {identifier: "author-8",   ranking: 8, name: "Stephen King", image: StephenKing },
-   ];
+    props.isBookRanking
+      ? props.onBookGet(searchCriteria)
+      : props.onAuthorGet(searchCriteria);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-   let activeTableHeader = props.isBookRanking ? "Książki" : "Autorzy";
-   let secondTableHeader = props.isBookRanking ? "Autorzy" : "Książki";
-   let tableCaption = props.isBookRanking ? "Lista top 100 najlepszych autorów" : "Lista top 100 najlepszych książek";
+  if (!props.loadingBookAction && !props.loadingAuthorAction) {
+    let i = 0;
 
-   const secondClicked = () => {
-      props.isBookRanking ? props.history.push("/authors/ranking") : props.history.push("/books/ranking");
-   };
+    props.isBookRanking
+      ? (ranking = props.books.map((book) => {
+          i = i + 1;
+          return {
+            identifier: book.bookExternalId,
+            ranking: i,
+            name: book.title,
+            image: book.cover,
+          };
+        }))
+      : (ranking = props.authors.map((author) => {
+          i = i + 1;
+          return {
+            identifier: author.authorExternalId,
+            ranking: i,
+            name: author.firstName + " " + author.lastName,
+            image: author.photo,
+          };
+        }));
+  }
 
-   const addBoo = () => {
-      props.isBookRanking ? props.history.push("/authors/ranking") : props.history.push("/books/ranking");
-   };
+  let activeTableHeader = props.isBookRanking ? "Książki" : "Autorzy";
+  let secondTableHeader = props.isBookRanking ? "Autorzy" : "Książki";
+  let tableCaption = props.isBookRanking
+    ? "Lista top 100 najlepszych autorów"
+    : "Lista top 100 najlepszych książek";
 
-   const addButton = props.isBookRanking ?
-      {text: "Dodaj ksiązkę", clicked: () => props.history.push("/books/new")} :
-      {text: "Dodaj autora", clicked: () => props.history.push("/authors/new")};
+  const secondClicked = () => {
+    props.isBookRanking
+      ? props.history.push("/authors/ranking")
+      : props.history.push("/books/ranking");
+  };
 
-   return (
-      <div className={styles.Ranking}>
-         <PageHeader caption={"Rankingi"} />
-         <div className={styles.PageContent}>
-            <Ranking
-               tableCaption={tableCaption}
-               secondClicked={secondClicked}
-               activeTableHeader={activeTableHeader}
-               secondTableHeader={secondTableHeader}
-               addButton={addButton}
-               items={props.isBookRanking ? books : authors}
-            />
-         </div>
+  const addButton = props.isBookRanking
+    ? { text: "Dodaj ksiązkę", clicked: () => props.history.push("/books/new") }
+    : {
+        text: "Dodaj autora",
+        clicked: () => props.history.push("/authors/new"),
+      };
+
+  return (
+    <div className={styles.Ranking}>
+      <PageHeader caption={"Rankingi"} />
+      <div className={styles.PageContent}>
+        <Ranking
+          tableCaption={tableCaption}
+          secondClicked={secondClicked}
+          activeTableHeader={activeTableHeader}
+          secondTableHeader={secondTableHeader}
+          addButton={addButton}
+          items={ranking}
+        />
       </div>
-   );
+    </div>
+  );
 };
 
-export default ranking;
+const mapStateToProps = (state) => {
+  return {
+    token: state.auth.token,
+    authors: state.author.authors,
+    books: state.book.books,
+    loadingAuthorAction: state.author.loading,
+    loadingBookAction: state.book.loading,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuthorGet: (searchCriteria) =>
+      dispatch(actions.getAuthors(searchCriteria)),
+    onBookGet: (searchCriteria) =>
+      dispatch(actions.getBooks(searchCriteria)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ErrorHandler(RankingPage, axiosInstance));

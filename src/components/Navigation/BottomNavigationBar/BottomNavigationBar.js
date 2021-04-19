@@ -6,13 +6,14 @@ import styles from "./BottomNavigationBar.module.css";
 
 import Categories from "../../../assets/icons/categories_second.svg";
 import Homepage from "../../../assets/icons/home_second.svg";
+import SignIn from "../../../assets/icons/sign_in_secondary.svg";
 import Books from "../../../assets/icons/books_second.svg";
 import Authors from "../../../assets/icons/authors_second.svg";
 import Profile from "../../../assets/photos/users/user1.jpg";
 import Settings from "../../../assets/icons/settings_second.svg";
 import Mails from "../../../assets/icons/mails_second.svg";
 import Favourites from "../../../assets/icons/favourites_second.svg";
-import Logout from "../../../assets/icons/logout_second.svg";
+import Logout from "../../../assets/icons/sign_out_secondary.svg";
 
 const bottomNavigationBar = (props) => {
     let profileMenu = [
@@ -22,7 +23,6 @@ const bottomNavigationBar = (props) => {
             name: "Settings",
             link: "/settings",
         },
-        {imgAlt: "Mails", imgSrc: Mails, name: "Mails", link: "/mails"},
         {
             imgAlt: "Favourites",
             imgSrc: Favourites,
@@ -49,14 +49,22 @@ const bottomNavigationBar = (props) => {
                     link="/categories"
                     exact
                 />
-                <ProfileNavigationItem
+                {props.isAuth ? <ProfileNavigationItem
                     imgAlt={"Profile"}
                     imgSrc={Profile}
                     name={"Profile"}
                     link="/profile"
                     exact
                     profileMenu={profileMenu}
-                />
+                /> :
+                    <NavigationItem
+                        imgAlt={"Login"}
+                        imgSrc={SignIn}
+                        name={"Login"}
+                        link="/login"
+                        exact
+                    />
+                }
                 <NavigationItem
                     imgAlt={"Books"}
                     imgSrc={Books}

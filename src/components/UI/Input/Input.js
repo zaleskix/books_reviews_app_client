@@ -49,7 +49,7 @@ const Input = (props) => {
         />
       );
       break;
-    case "file":
+    case "photo":
       element = (
         <div className={styles.AvatarInput}>
           <Avatar

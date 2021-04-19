@@ -12,10 +12,11 @@ const rankingItem = (props) => {
         }
      };
 
+
     return (
         <div className={styles.RankingItem} onClick={() => rankingItemClicked(props.identifier)}>
             <div className={styles.ItemImage}>
-                <img alt={props.name} src={props.image}/>
+                <img alt={props.name} src={`data:image/png;base64,${props.image}`}/>
             </div>
             <div className={styles.ItemCaption}>
                 <div className={styles.ItemPosition}>{props.position}</div>

@@ -7,7 +7,7 @@ import TextButton from "../../components/UI/Buttons/TextButton/TextButton";
 
 const ranking = (props) => {
    let rankingItems = props.items.map((item) => (
-      <RankingItem identifier={item.identifier} position={item.ranking} name={item.name} image={item.image} />
+      <RankingItem key={item.identifier} identifier={item.identifier} position={item.ranking} name={item.name} image={item.image} />
    ));
 
    return (
