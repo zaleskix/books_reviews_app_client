@@ -22,13 +22,14 @@ export const getUserInfoFail = (error) => {
   };
 };
 
-export const getUserInfo = () => {
+export const getUserInfo = (token) => {
   return (dispatch) => {
     dispatch(getUserInfoStart());
     let url = "http://localhost:6080/me";
     axiosInstance
       .get(url, {
         headers: {
+          "Authorization": token,
           "Content-Type": "application/json",
         },
       })
