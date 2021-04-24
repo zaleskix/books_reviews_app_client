@@ -2,12 +2,7 @@ import React from "react";
 
 import styles from "./Favourites.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
-import DoktorSen from "../../assets/photos/books/book1.png";
-import Tatuazysta from "../../assets/photos/books/book2.png";
-import OPolnocy from "../../assets/photos/books/book3.png";
 import Favourite from "../../components/Favourite/Favourite";
-import StephenKing from "../../assets/photos/authors/author1.png";
-import JKRowling from "../../assets/photos/authors/author2.png";
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
 import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
@@ -18,6 +13,7 @@ const Favourites = (props) => {
   const favouritesData = [];
 
   if (props.favourites) {
+    // eslint-disable-next-line array-callback-return
     props.favourites.map((fav) => {
       if (fav.authorExternalId) {
         favouritesData.push({

@@ -2,12 +2,9 @@ import React from "react";
 import styles from "./ProfileNavigatiomItems.module.css";
 
 import ProfileNavigationItem from "../../BottomNavigationBar/ProfileNavigationItem/ProfileNavigationItem";
-import Profile from "../../../../assets/photos/users/user1.jpg";
 import NavigationItem from "../../NavigationItem/NavigationItem";
 import SettingsActive from "../../../../assets/icons/settings_primary.svg";
 import SettingsInactive from "../../../../assets/icons/settings_second.svg";
-import MailsActive from "../../../../assets/icons/mails_primary.svg";
-import MailsInactive from "../../../../assets/icons/mails_second.svg";
 import SignInActive from "../../../../assets/icons/sign_in_primary.svg";
 import SignOutActive from "../../../../assets/icons/sign_out_primary.svg";
 import SignInInactive from "../../../../assets/icons/sign_in_secondary.svg";

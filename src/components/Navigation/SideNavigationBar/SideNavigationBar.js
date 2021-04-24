@@ -15,7 +15,6 @@ import BooksActive from "../../../assets/icons/books_primary.svg";
 import BooksInactive from "../../../assets/icons/books_second.svg";
 import AuthorsActive from "../../../assets/icons/authors_primary.svg";
 import AuthorsInactive from "../../../assets/icons/authors_second.svg";
-import * as actions from "../../../store/actions";
 import { connect } from "react-redux";
 import ErrorHandler from "../../../hoc/ErrorHandler/ErrorHandler";
 import axiosInstance from "../../../axios";

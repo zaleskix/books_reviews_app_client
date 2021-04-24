@@ -2,18 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import styles from "./Settings.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
-import Menu from "../../assets/icons/menu.svg";
-import ExpandedDiv from "../../components/UI/AnimatedComponents/ExpandedDiv/ExpandedDiv";
-import FullSizePhoto from "../../components/Common/FullSizePhoto/FullSizePhoto";
-import TextButton from "../../components/UI/Buttons/TextButton/TextButton";
-import Avatar from "../../assets/photos/users/user1.jpg";
 import From from "../../components/UI/Form/Form";
 import * as actions from "../../store/actions";
 import {connect} from "react-redux";
 import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
 import axiosInstance from "../../axios";
 import formTemplate from "./formTemplate/formTemplate";
-import {useLocation} from "react-router-dom";
 
 const Settings = (props) => {
    if (!props.token) props.history.push("/login")

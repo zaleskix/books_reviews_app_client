@@ -26,11 +26,13 @@ const BookDetails = (props) => {
 
   useEffect(() => {
     if (props.favourites) {
+      // eslint-disable-next-line array-callback-return
       props.favourites.map((fav) => {
         if (fav.bookExternalId && fav.bookExternalId === bookId)
           setAddedToFavourites(true);
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let reviews = [];

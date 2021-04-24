@@ -1,12 +1,13 @@
 const formTemplate = (props) => {
-  let categories = []
+  let categories = [];
   if (props.categories) {
-    props.categories.map(category => {
+    // eslint-disable-next-line array-callback-return
+    props.categories.map((category) => {
       categories.push({
         value: category.name,
-        displayValue: category.name
-      })
-    })
+        displayValue: category.name,
+      });
+    });
   }
   return {
     photo: {

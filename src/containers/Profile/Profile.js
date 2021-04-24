@@ -3,15 +3,6 @@ import { useLocation, withRouter } from "react-router-dom";
 
 import styles from "./Profile.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
-import TextButton from "../../components/UI/Buttons/TextButton/TextButton";
-import FullSizePhoto from "../../components/Common/FullSizePhoto/FullSizePhoto";
-
-import UserProfilePicture from "../../assets/photos/users/user1.jpg";
-import Book1 from "../../assets/photos/books/book1.png";
-import Book2 from "../../assets/photos/books/book2.png";
-import Book3 from "../../assets/photos/books/book3.png";
-import Book4 from "../../assets/photos/books/book4.png";
-import Book5 from "../../assets/photos/books/book5.png";
 import { connect } from "react-redux";
 import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
 import axiosInstance from "../../axios";
@@ -40,6 +31,7 @@ const Profile = (props) => {
   if (!props.loading && props.actionFinished) {
     let favourites = [];
     if (props.favourites) {
+      // eslint-disable-next-line array-callback-return
       props.favourites.map((fav) => {
         if (fav.bookExternalId) {
           favourites.push({

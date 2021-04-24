@@ -11,7 +11,6 @@ import Books from "../../../assets/icons/books_second.svg";
 import Authors from "../../../assets/icons/authors_second.svg";
 import Profile from "../../../assets/photos/users/user1.jpg";
 import Settings from "../../../assets/icons/settings_second.svg";
-import Mails from "../../../assets/icons/mails_second.svg";
 import Favourites from "../../../assets/icons/favourites_second.svg";
 import Logout from "../../../assets/icons/sign_out_secondary.svg";
 

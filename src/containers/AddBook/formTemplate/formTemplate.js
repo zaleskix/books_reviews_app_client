@@ -1,24 +1,24 @@
 const formTemplate = (props) => {
-
-  let categories = []
-  let authors = []
+  let categories = [];
+  let authors = [];
 
   if (props.authors) {
     props.authors.map((author) =>
-        authors.push({
-          value: author.authorExternalId,
-          displayValue: author.firstName + " " + author.lastName,
-        })
+      authors.push({
+        value: author.authorExternalId,
+        displayValue: author.firstName + " " + author.lastName,
+      })
     );
   }
 
   if (props.categories) {
-    props.categories.map(category => {
+    // eslint-disable-next-line array-callback-return
+    props.categories.map((category) => {
       categories.push({
         value: category.name,
-        displayValue: category.name
-      })
-    })
+        displayValue: category.name,
+      });
+    });
   }
 
   return {

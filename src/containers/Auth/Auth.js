@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 
 import TextButton from "../../components/UI/Buttons/TextButton/TextButton";
 import styles from "./Auth.module.css";

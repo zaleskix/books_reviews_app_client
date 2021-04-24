@@ -18,6 +18,7 @@ const AddAuthor = (props) => {
 
   useEffect(() => {
     setAuthorForm(AuthorFormTemplate({categories: props.categories}))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const submitted = (authorData) => {
