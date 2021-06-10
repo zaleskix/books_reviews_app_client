@@ -8,8 +8,6 @@ import { useLocation } from "react-router-dom";
 import { Roller } from "react-awesome-spinners";
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 import AvatarPlaceholder from "../../assets/photos/users/placeholder.png";
 
 const BookDetails = (props) => {
@@ -214,4 +212,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(BookDetails, axiosInstance));
+)(BookDetails);

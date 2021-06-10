@@ -5,8 +5,6 @@ import styles from "./EditBook.module.css";
 import { Roller } from "react-awesome-spinners";
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 import From from "../../components/UI/Form/Form";
 import formTemplate from "./formTemplate/formTemplate";
 
@@ -114,4 +112,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(EditBook, axiosInstance));
+)(EditBook);

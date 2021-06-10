@@ -5,8 +5,6 @@ import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import Details from "../../components/Common/Details/Details";
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 import { useLocation } from "react-router-dom";
 import { Roller } from "react-awesome-spinners";
 import AvatarPlaceholder from "../../assets/photos/users/placeholder.png";
@@ -209,4 +207,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(AuthorDetails, axiosInstance));
+)(AuthorDetails);

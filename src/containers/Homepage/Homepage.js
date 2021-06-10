@@ -8,8 +8,6 @@ import DiscoverCategories from "./DiscoverCategories/DiscoverCategories";
 
 import * as actions from "../../store/actions";
 import {connect} from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 
 const Homepage = (props) => {
     if (!props.token) props.history.push("/login")
@@ -72,4 +70,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ErrorHandler(Homepage, axiosInstance));
+)(Homepage);

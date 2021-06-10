@@ -5,8 +5,6 @@ import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import From from "../../components/UI/Form/Form";
 import * as actions from "../../store/actions";
 import {connect} from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 import formTemplate from "./formTemplate/formTemplate";
 
 const Settings = (props) => {
@@ -83,4 +81,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ErrorHandler(Settings, axiosInstance));
+)(Settings);

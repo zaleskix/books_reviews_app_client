@@ -7,7 +7,6 @@ import styles from "./AddCategory.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import From from "../../components/UI/Form/Form";
 import * as actions from "../../store/actions/index";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
 import CategoryFormTemplate from "./formTemplate/formTemplate";
 
 const AddCategory = (props) => {
@@ -71,4 +70,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(AddCategory, axiosInstance));
+)(AddCategory);

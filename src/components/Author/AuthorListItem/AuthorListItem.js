@@ -12,7 +12,7 @@ const authorListItem = (props) => {
 
     return (
         <div className={styles.AuthorItem}  onClick={() => authorClicked(props.author.identifier)}>
-            <AuthorPhoto name={props.author.name} image={props.author.image}/>
+            {/*<AuthorPhoto name={props.author.name} image={props.author.image}/>*/}
             <div className={styles.Ranking}>{props.author.ranking}</div>
             <div className={styles.Name}>{props.author.name}</div>
         </div>

@@ -23,15 +23,6 @@ const ranking = (props) => {
                <div className={styles.TableCaption}> {props.tableCaption}</div>
                <TextButton isPrimary text={props.addButton.text} clicked={props.addButton.clicked} />
             </div>
-            <div className={styles.Sort}>
-               <div className={styles.SortCaption}> Sortuj według :</div>
-               <div className={styles.SortDropdown}>
-                  <div className={styles.SortDropdownCaption}>Najlepsze w tym tygodniu</div>
-                  <div className={styles.SortDropdownIcon}>
-                     <img alt="dropdown" src={Dropdown} />
-                  </div>
-               </div>
-            </div>
          </div>
          <div className={styles.TableContent}>{rankingItems}</div>
       </div>

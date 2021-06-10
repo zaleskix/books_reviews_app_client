@@ -4,8 +4,6 @@ import ScoreButtons from "../../../UI/Buttons/ScoreButtons/ScoreButtons";
 import styles from "./Review.module.css";
 import * as actions from "../../../../store/actions";
 import { connect } from "react-redux";
-import ErrorHandler from "../../../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../../../axios";
 import { withRouter } from "react-router-dom";
 
 const Review = (props) => {
@@ -29,7 +27,7 @@ const Review = (props) => {
           onClick={() => userClicked(props.author.identifier)}
         >
           <div className={styles.AuthorAvatar}>
-            <img src={props.avatar} alt={props.author.name} />
+            <img src={`data:image/png;base64,${props.avatar}`} alt={props.author.name} />
           </div>
           <div className={styles.AuthorName}>{props.author.name}</div>
         </div>
@@ -73,4 +71,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(withRouter(Review), axiosInstance));
+)(withRouter(Review));

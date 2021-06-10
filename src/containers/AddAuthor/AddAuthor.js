@@ -7,7 +7,6 @@ import styles from "./AddAuthor.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import From from "../../components/UI/Form/Form";
 import * as actions from "../../store/actions/index";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
 import AuthorFormTemplate from "./formTemplate/formTemplate";
 
 const AddAuthor = (props) => {
@@ -72,4 +71,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(AddAuthor, axiosInstance));
+)(AddAuthor);

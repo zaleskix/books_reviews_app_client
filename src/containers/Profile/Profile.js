@@ -4,8 +4,6 @@ import { useLocation, withRouter } from "react-router-dom";
 import styles from "./Profile.module.css";
 import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import { connect } from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 import { Roller } from "react-awesome-spinners";
 import * as actions from "../../store/actions";
 
@@ -105,4 +103,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(withRouter(Profile), axiosInstance));
+)(withRouter(Profile));

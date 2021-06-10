@@ -6,8 +6,6 @@ import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import TextButton from "../../components/UI/Buttons/TextButton/TextButton";
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 
 const Categories = (props) => {
   if (!props.token) props.history.push("/login")
@@ -71,4 +69,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(Categories, axiosInstance));
+)(Categories);

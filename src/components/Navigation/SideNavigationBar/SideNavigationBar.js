@@ -16,7 +16,6 @@ import BooksInactive from "../../../assets/icons/books_second.svg";
 import AuthorsActive from "../../../assets/icons/authors_primary.svg";
 import AuthorsInactive from "../../../assets/icons/authors_second.svg";
 import { connect } from "react-redux";
-import ErrorHandler from "../../../hoc/ErrorHandler/ErrorHandler";
 import axiosInstance from "../../../axios";
 import ProfilePlaceholder from "../../../assets/photos/users/avatar_placeholder.png";
 
@@ -120,6 +119,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(
-  ErrorHandler(SideNavigationBar, axiosInstance)
-);
+export default connect(mapStateToProps)(SideNavigationBar);

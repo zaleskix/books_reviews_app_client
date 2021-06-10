@@ -5,30 +5,30 @@ import PageHeader from "../../components/UI/PageHeader/PageHeader";
 import Favourite from "../../components/Favourite/Favourite";
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 
 const Favourites = (props) => {
   if (!props.token) props.history.push("/login");
   const favouritesData = [];
 
-  if (props.favourites) {
+  if (props.favouriteBooks) {
     // eslint-disable-next-line array-callback-return
-    props.favourites.map((fav) => {
-      if (fav.authorExternalId) {
-        favouritesData.push({
-          identifier: fav.authorExternalId,
-          caption: fav.firstName + " " + fav.lastName,
-          image: fav.photo,
-        });
-      } else {
-        favouritesData.push({
-          identifier: fav.bookExternalId,
-          caption: fav.title,
-          image: fav.cover,
-        });
-      }
+    props.favouriteBooks.map((fav) => {
+      favouritesData.push({
+        identifier: fav.bookExternalId,
+        caption: fav.title,
+        image: fav.cover,
+      });
     });
+  }
+  if (props.favouriteAuthors) {
+    // eslint-disable-next-line array-callback-return
+    props.favouriteAuthors.map((fav) => {
+      favouritesData.push({
+        identifier: fav.authorExternalId,
+        caption: fav.firstName + " " + fav.lastName,
+        image: fav.photo,
+      });
+    })
   }
 
   const showDetails = (favId) => {
@@ -68,7 +68,8 @@ const Favourites = (props) => {
 const mapStateToProps = (state) => {
   return {
     token: state.auth.token,
-    favourites: state.util.userDetails.favouriteBooks,
+    favouriteBooks: state.util.userDetails.favouriteBooks,
+    favouriteAuthors: state.util.userDetails.favouriteAuthors,
     userId: state.util.userId,
   };
 };
@@ -83,4 +84,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(Favourites, axiosInstance));
+)(Favourites);

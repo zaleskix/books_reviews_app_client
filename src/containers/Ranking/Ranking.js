@@ -7,8 +7,6 @@ import PageHeader from "../../components/UI/PageHeader/PageHeader";
 
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
-import ErrorHandler from "../../hoc/ErrorHandler/ErrorHandler";
-import axiosInstance from "../../axios";
 
 const RankingPage = (props) => {
   if (!props.token) props.history.push("/login")
@@ -53,8 +51,8 @@ const RankingPage = (props) => {
   let activeTableHeader = props.isBookRanking ? "Książki" : "Autorzy";
   let secondTableHeader = props.isBookRanking ? "Autorzy" : "Książki";
   let tableCaption = props.isBookRanking
-    ? "Lista top 100 najlepszych autorów"
-    : "Lista top 100 najlepszych książek";
+    ? "Lista top 100 najlepszych książek"
+    : "Lista top 100 najlepszych autorów";
 
   const secondClicked = () => {
     props.isBookRanking
@@ -108,4 +106,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ErrorHandler(RankingPage, axiosInstance));
+)(RankingPage);
